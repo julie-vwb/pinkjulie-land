@@ -11,8 +11,9 @@
             --bg-sky: #e3f2fd;
             --bg-pink: #fce4ec;
             --bg-purple: #f3e5f5;
-            /* เปลี่ยนเป็นสีฟ้าพาสเทลตามบรีฟใหม่ค๊า ✨ */
             --shop-blue: #90caf9; 
+            /* สีฟ้าอ่อนพิเศษสำหรับขอบเส้นประ ให้ละมุนกว่าชื่อร้านค๊า ✨ */
+            --status-blue: #bbdefb; 
             --glass-white: rgba(255, 255, 255, 0.85);
             --text-main: #5d5d5d; 
             --accent-pink: #f06292;
@@ -55,12 +56,14 @@
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
         }
 
+        /* ปรับขอบเส้นความเป็นสีฟ้าพาสเทลอ่อนๆ ตามที่แม่บรีฟเลยค่ะ 💙 */
         .status-badge {
             background: transparent;
-            border: 2px dashed var(--accent-pink);
+            border: 2px dashed var(--status-blue); 
             border-radius: 20px;
             padding: 10px 20px; display: inline-flex; align-items: center; gap: 8px;
-            margin-top: 15px; font-size: 13px; color: var(--accent-pink);
+            margin-top: 15px; font-size: 13px; 
+            color: #64b5f6; /* ปรับสีตัวอักษรสถานะให้เป็นฟ้าโทนเดียวกันด้วยค่ะ */
             font-weight: 500; line-height: 1.4;
         }
         .dot { height: 8px; width: 8px; background: #4caf50; border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
@@ -162,22 +165,22 @@
         </div>
     </div>
     <div class="section-box">
-        <div style="font-size: 15px; font-weight: 600; color: #448aff; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+        <div style="font-size: 15px; font-weight: 600; color: var(--shop-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
             🛡️ การรับประกันและบริการเสริม
         </div>
         
-        <div style="background: #e3f2fd; border-radius: 15px; padding: 15px; margin-bottom: 12px; border-left: 4px solid #2196f3;">
-            <div style="font-weight: 600; font-size: 13px; color: #1976d2; margin-bottom: 5px;">✅ แบบมีประกัน (+100 บาท)</div>
+        <div style="background: #e1f5fe; border-radius: 15px; padding: 15px; margin-bottom: 12px; border: 1px solid #b3e5fc;">
+            <div style="font-weight: 600; font-size: 13px; color: #039be5; margin-bottom: 5px;">✅ แบบมีประกัน (+100 บาท)</div>
             <div style="font-size: 12px; line-height: 1.6;">หากมีปัญหาเยอะ จะทำการสร้างเว็บให้ใหม่ 1 ครั้ง สามารถบรีฟใหม่ได้เลยค่ะ ✨</div>
         </div>
 
-        <div style="background: #fff3e0; border-radius: 15px; padding: 15px; margin-bottom: 12px; border-left: 4px solid #ff9800;">
-            <div style="font-weight: 600; font-size: 13px; color: #e65100; margin-bottom: 5px;">❌ แบบไม่มีประกัน (ไม่รับเคลม)</div>
+        <div style="background: #fff8e1; border-radius: 15px; padding: 15px; margin-bottom: 12px; border: 1px solid #ffecb3;">
+            <div style="font-weight: 600; font-size: 13px; color: #ffa000; margin-bottom: 5px;">❌ แบบไม่มีประกัน (ไม่รับเคลม)</div>
             <div style="font-size: 12px; line-height: 1.6;">หากเว็บมีปัญหา จุดไหนแก้ได้จะแก้ให้ หากแก้ไม่ได้จะเป็นไปตามเงื่อนไขร้าน คือไม่รับเคลมเนื่องจากตอนส่งงานเว็บปกติแล้วค่ะ</div>
         </div>
 
-        <div style="background: #f3e5f5; border-radius: 15px; padding: 15px; border-left: 4px solid #ab47bc;">
-            <div style="font-weight: 600; font-size: 13px; color: #7b1fa2; margin-bottom: 5px;">✍️ บริการแก้ไขในอนาคต</div>
+        <div style="background: #f3e5f5; border-radius: 15px; padding: 15px; border: 1px solid #e1bee7;">
+            <div style="font-weight: 600; font-size: 13px; color: #8e24aa; margin-bottom: 5px;">🫧 บริการแก้ไขในอนาคต</div>
             <div style="font-size: 12px; line-height: 1.6;">
                 • แก้ไขตัวหนังสือ 10 จุด : <b>เหมา 39.-</b><br>
                 • เพิ่มรูปภาพ 1-2 รูป : <b>39.-</b><br>
@@ -190,10 +193,16 @@
         <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 15px;">⏰ ระยะเวลาทำงาน</div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <div style="background: linear-gradient(to right, #f8bbd0, #f06292); border-radius: 15px; padding: 15px; color: white; text-align: center;">
-                <span style="font-size: 11px; opacity: 0.9; display: block;">✨ กรณีไม่มีคิว : 1 - 3 วัน</span>
+                <span style="font-size: 11px; opacity: 0.9; display: block;">✨ กรณีไม่มีคิว :</span>
+                <span style="font-size: 15px; font-weight: 600;">1 - 3 วัน (เร็วสุดในวันนั้น)</span>
+            </div>
+            <div style="background: linear-gradient(to right, #f06292, #d81b60); border-radius: 15px; padding: 15px; color: white; text-align: center;">
+                <span style="font-size: 11px; opacity: 0.9; display: block;">⏳ กรณีมีคิวงาน :</span>
+                <span style="font-size: 15px; font-weight: 600;">ประมาณ 1 - 7 วันค่ะ</span>
             </div>
             <div style="background: linear-gradient(to right, #d81b60, #ad1457); border-radius: 15px; padding: 15px; color: white; text-align: center; border: 1.5px solid #fff;">
-                <span style="font-size: 11px; opacity: 0.9; display: block;">⚡️ งานเร่งด่วน x2 : ภายใน 2 วัน</span>
+                <span style="font-size: 11px; opacity: 0.9; display: block;">⚡️ งานเร่งด่วน x2 :</span>
+                <span style="font-size: 15px; font-weight: 600;">ได้รับงานภายใน 2 วัน</span>
             </div>
         </div>
     </div>
@@ -201,6 +210,7 @@
         <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 12px;">📌 หมายเหตุสำคัญ</div>
         <div style="background: #fffdf2; border: 1px solid #fff176; border-radius: 15px; padding: 15px;">
             <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #795548;">⚡ <span>ปกติการทำงานเฉลี่ย 1-3 วัน หากไม่ติดธุระ</span></div>
+            <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #795548;">⚡ <span>เวลาที่แจ้งเป็นการเผื่อเวลาเพื่อความเป๊ะค่ะ</span></div>
             <div style="display: flex; gap: 8px; font-size: 12px; color: #795548;">⚡ <span>ระยะเวลาการทำงาน ไม่รวมรอคิวนะคะ</span></div>
         </div>
     </div>
@@ -251,7 +261,7 @@ function copyBrief() {
     area.select();
     document.execCommand("copy");
     document.body.removeChild(area);
-    alert("คัดลอกบรีฟเรียบร้อยค่ะ กรอกแล้วส่งบรีฟได้เลยนะคะ ✨");
+    alert("คัดลอกบรีฟเรียบร้อยค่ะ ✨");
 }
 window.onload = createEmojis;
 </script>
