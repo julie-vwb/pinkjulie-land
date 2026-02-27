@@ -11,7 +11,8 @@
             --bg-sky: #e3f2fd;
             --bg-pink: #fce4ec;
             --bg-purple: #f3e5f5;
-            --shop-lavender: #ce93d8; 
+            /* เปลี่ยนเป็นสีฟ้าพาสเทลตามบรีฟใหม่ค๊า ✨ */
+            --shop-blue: #90caf9; 
             --glass-white: rgba(255, 255, 255, 0.85);
             --text-main: #5d5d5d; 
             --accent-pink: #f06292;
@@ -23,8 +24,7 @@
             background: linear-gradient(135deg, var(--bg-sky), var(--bg-pink), var(--bg-purple));
             background-attachment: fixed;
             display: flex; flex-direction: column; align-items: center;
-            min-height: 100vh; 
-            color: var(--text-main);
+            min-height: 100vh; color: var(--text-main);
             overflow-x: hidden;
         }
 
@@ -40,7 +40,7 @@
         }
 
         .container {
-            width: 90%; max-width: 480px;
+            width: 95%; max-width: 480px;
             margin: 60px 10px; position: relative; z-index: 1;
         }
 
@@ -48,23 +48,22 @@
         
         .shop-name { 
             font-size: 38px; 
-            color: var(--shop-lavender); 
+            color: var(--shop-blue); 
             font-weight: 700; 
             margin: 0;
             letter-spacing: 1.5px;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
         }
 
-        /* ปรับสถานะเป็นพื้นหลังใส ขอบเส้นประ ตามเรฟเลยค๊า ✨ */
         .status-badge {
-            background: transparent; /* สีใส */
-            border: 2px dashed var(--accent-pink); /* ขอบเส้นประสีชมพู */
+            background: transparent;
+            border: 2px dashed var(--accent-pink);
             border-radius: 20px;
-            padding: 8px 25px; display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 20px; display: inline-flex; align-items: center; gap: 8px;
             margin-top: 15px; font-size: 13px; color: var(--accent-pink);
-            font-weight: 500;
+            font-weight: 500; line-height: 1.4;
         }
-        .dot { height: 8px; width: 8px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; }
+        .dot { height: 8px; width: 8px; background: #4caf50; border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
         @keyframes pulse {
             0% { transform: scale(0.95); opacity: 0.8; }
             50% { transform: scale(1.1); opacity: 1; }
@@ -95,7 +94,8 @@
         }
         .port-title { font-weight: 600; font-size: 14.5px; margin-bottom: 2px; }
         .port-more { font-size: 11px; color: var(--accent-pink); opacity: 0.7; }
-        .port-item:hover { background: #fffcfd; border-color: var(--shop-lavender); transform: translateY(-2px); }
+        .port-item:hover { background: #fffcfd; border-color: var(--shop-blue); transform: translateY(-2px); }
+
     </style>
 </head>
 <body>
@@ -103,7 +103,10 @@
 <div class="container">
     <div class="profile-header">
         <h1 class="shop-name">🪸PINKJULIE JU🪸</h1>
-        <div class="status-badge"><span class="dot"></span> รับออเดอร์ปกติค่ะ สามารถทักสอบถามคิวปัจจุบันได้เลยนะคะ ✨</div>
+        <div class="status-badge">
+            <span class="dot"></span> 
+            <span>รับออเดอร์ปกติค่ะ สามารถทักสอบถามคิวปัจจุบันได้เลยนะคะ ✨</span>
+        </div>
     </div>
 
     <div class="section-box">
@@ -159,31 +162,49 @@
         </div>
     </div>
     <div class="section-box">
-        <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 15px;">⏰ ระยะเวลาทำงาน</div>
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-            <div style="background: linear-gradient(to right, #f8bbd0, #f06292); border-radius: 15px; padding: 15px; color: white; text-align: center;">
-                <span style="font-size: 11px; opacity: 0.9; display: block;">✨ กรณีไม่มีคิว :</span>
-                <span style="font-size: 15px; font-weight: 600;">1 - 3 วัน (เร็วสุดในวันนั้น)</span>
-            </div>
-            <div style="background: linear-gradient(to right, #f06292, #d81b60); border-radius: 15px; padding: 15px; color: white; text-align: center;">
-                <span style="font-size: 11px; opacity: 0.9; display: block;">⏳ กรณีมีคิวงาน :</span>
-                <span style="font-size: 15px; font-weight: 600;">ประมาณ 1 - 7 วันค่ะ</span>
-            </div>
-            <div style="background: linear-gradient(to right, #d81b60, #ad1457); border-radius: 15px; padding: 15px; color: white; text-align: center; border: 1.5px solid #fff;">
-                <span style="font-size: 11px; opacity: 0.9; display: block;">⚡️ งานเร่งด่วน x2 :</span>
-                <span style="font-size: 15px; font-weight: 600;">ได้รับงานภายใน 2 วัน</span>
+        <div style="font-size: 15px; font-weight: 600; color: #448aff; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+            🛡️ การรับประกันและบริการเสริม
+        </div>
+        
+        <div style="background: #e3f2fd; border-radius: 15px; padding: 15px; margin-bottom: 12px; border-left: 4px solid #2196f3;">
+            <div style="font-weight: 600; font-size: 13px; color: #1976d2; margin-bottom: 5px;">✅ แบบมีประกัน (+100 บาท)</div>
+            <div style="font-size: 12px; line-height: 1.6;">หากมีปัญหาเยอะ จะทำการสร้างเว็บให้ใหม่ 1 ครั้ง สามารถบรีฟใหม่ได้เลยค่ะ ✨</div>
+        </div>
+
+        <div style="background: #fff3e0; border-radius: 15px; padding: 15px; margin-bottom: 12px; border-left: 4px solid #ff9800;">
+            <div style="font-weight: 600; font-size: 13px; color: #e65100; margin-bottom: 5px;">❌ แบบไม่มีประกัน (ไม่รับเคลม)</div>
+            <div style="font-size: 12px; line-height: 1.6;">หากเว็บมีปัญหา จุดไหนแก้ได้จะแก้ให้ หากแก้ไม่ได้จะเป็นไปตามเงื่อนไขร้าน คือไม่รับเคลมเนื่องจากตอนส่งงานเว็บปกติแล้วค่ะ</div>
+        </div>
+
+        <div style="background: #f3e5f5; border-radius: 15px; padding: 15px; border-left: 4px solid #ab47bc;">
+            <div style="font-weight: 600; font-size: 13px; color: #7b1fa2; margin-bottom: 5px;">✍️ บริการแก้ไขในอนาคต</div>
+            <div style="font-size: 12px; line-height: 1.6;">
+                • แก้ไขตัวหนังสือ 10 จุด : <b>เหมา 39.-</b><br>
+                • เพิ่มรูปภาพ 1-2 รูป : <b>39.-</b><br>
+                • เพิ่มรูปภาพ 1-4 รูป : <b>59.-</b>
             </div>
         </div>
     </div>
 
     <div class="section-box">
+        <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 15px;">⏰ ระยะเวลาทำงาน</div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="background: linear-gradient(to right, #f8bbd0, #f06292); border-radius: 15px; padding: 15px; color: white; text-align: center;">
+                <span style="font-size: 11px; opacity: 0.9; display: block;">✨ กรณีไม่มีคิว : 1 - 3 วัน</span>
+            </div>
+            <div style="background: linear-gradient(to right, #d81b60, #ad1457); border-radius: 15px; padding: 15px; color: white; text-align: center; border: 1.5px solid #fff;">
+                <span style="font-size: 11px; opacity: 0.9; display: block;">⚡️ งานเร่งด่วน x2 : ภายใน 2 วัน</span>
+            </div>
+        </div>
+    </div>
+    <div class="section-box">
         <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 12px;">📌 หมายเหตุสำคัญ</div>
         <div style="background: #fffdf2; border: 1px solid #fff176; border-radius: 15px; padding: 15px;">
             <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #795548;">⚡ <span>ปกติการทำงานเฉลี่ย 1-3 วัน หากไม่ติดธุระ</span></div>
-            <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #795548;">⚡ <span>เวลาที่แจ้งเป็นการเผื่อเวลาเพื่อความเป๊ะค่ะ</span></div>
             <div style="display: flex; gap: 8px; font-size: 12px; color: #795548;">⚡ <span>ระยะเวลาการทำงาน ไม่รวมรอคิวนะคะ</span></div>
         </div>
     </div>
+
     <div class="section-box">
         <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 15px;">📋 แบบฟอร์มบรีฟงาน</div>
         <div id="briefText" style="background: white; border-radius: 15px; padding: 18px; font-size: 13px; line-height: 1.8; border: 1px solid #fce4ec; white-space: pre-line; color: var(--text-main);">
@@ -194,8 +215,9 @@
             4. โทนสีที่ชอบ:
             5. เลือกอิโมจิที่ชอบ 3 ตัว:
             6. ไฟล์รูปภาพ (ส่งแนบในแชท):
-            7. ช่องทางติดต่อ/ลิงก์:
-            8. หมายเหตุเพิ่มเติม:
+            7. การรับประกัน (เลือก มี/ไม่มี):
+            8. ช่องทางติดต่อ/ลิงก์:
+            9. หมายเหตุเพิ่มเติม:
         </div>
         <button onclick="copyBrief()" style="width:100%; padding:15px; border-radius:35px; border:none; background: #f06292; color:white; font-family:'Mitr'; font-weight:600; cursor:pointer; margin-top:15px; font-size:14px; box-shadow: 0 5px 15px rgba(240, 98, 146, 0.2);">คัดลอกแบบฟอร์ม ✨</button>
     </div>
