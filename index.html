@@ -11,8 +11,12 @@
             --bg-sky: #e3f2fd;
             --bg-pink: #fce4ec;
             --bg-purple: #f3e5f5;
-            --shop-pink: #f8bbd0; /* สีชมพูอ่อนสำหรับชื่อร้าน */
-            --glass-white: rgba(255, 255, 255, 0.8);
+            /* สีม่วงอ่อนพาสเทลสำหรับชื่อร้านตามบรีฟค๊า */
+            --shop-lavender: #ce93d8; 
+            --glass-white: rgba(255, 255, 255, 0.85);
+            /* เปลี่ยนจากสีม่วงเข้ม เป็นสีเทาอมน้ำตาลนวลๆ ให้ดูมินิมอลค๊า */
+            --text-main: #5d5d5d; 
+            --accent-pink: #f06292;
         }
 
         body {
@@ -21,7 +25,9 @@
             background: linear-gradient(135deg, var(--bg-sky), var(--bg-pink), var(--bg-purple));
             background-attachment: fixed;
             display: flex; flex-direction: column; align-items: center;
-            min-height: 100vh; color: #4a148c;
+            min-height: 100vh; 
+            color: var(--text-main); /* ใช้สีใหม่ทั้้งเว็บ */
+            overflow-x: hidden;
         }
 
         .emoji-fly {
@@ -42,23 +48,22 @@
 
         .profile-header { text-align: center; margin-bottom: 35px; }
         
-        /* ชื่อร้านสีชมพูอ่อนสไตล์มินิมอลตามบรีฟค๊า */
+        /* ชื่อร้านสีม่วงพาสเทลอ่อนๆ ตามบรีฟแม่เลยค่ะ ✨ */
         .shop-name { 
             font-size: 38px; 
-            color: var(--shop-pink); 
+            color: var(--shop-lavender); 
             font-weight: 700; 
             margin: 0;
             letter-spacing: 1.5px;
-            /* ใส่เงาสีชมพูระเรื่อบางๆ ให้ดูละมุน */
-            text-shadow: 2px 2px 5px rgba(248, 187, 208, 0.4);
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
         }
 
         .status-badge {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(8px);
             border-radius: 50px;
             padding: 6px 20px; display: inline-flex; align-items: center; gap: 8px;
-            margin-top: 15px; font-size: 13px; color: #d81b60;
+            margin-top: 15px; font-size: 13px; color: var(--accent-pink);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
         .dot { height: 8px; width: 8px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; }
@@ -70,30 +75,29 @@
         .section-box {
             background: var(--glass-white); border-radius: 25px;
             padding: 25px; margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.7);
         }
 
-        .intro-text { text-align: center; font-size: 14px; line-height: 1.8; color: #5c2d91; }
+        .intro-text { text-align: center; font-size: 14px; line-height: 1.8; color: var(--text-main); }
 
         .port-notice-box {
-            background: rgba(255, 255, 255, 0.4); 
+            background: #fff5f8; 
             border-radius: 15px; padding: 12px 15px;
             border: 1px dashed #f8bbd0; margin-bottom: 20px;
-            font-size: 12px; color: #d81b60; text-align: center;
+            font-size: 12px; color: var(--accent-pink); text-align: center;
         }
 
         .port-list { display: flex; flex-direction: column; gap: 10px; }
         .port-item {
             background: #fff; padding: 15px 20px; border-radius: 18px;
-            text-decoration: none; color: #4a148c; font-size: 14px;
+            text-decoration: none; color: var(--text-main); font-size: 14px;
             display: flex; flex-direction: column; align-items: flex-start;
             border: 1px solid #f3e5f5; transition: 0.3s;
         }
         .port-title { font-weight: 600; font-size: 14.5px; margin-bottom: 2px; }
-        .port-more { font-size: 11px; color: #f06292; opacity: 0.8; }
-        .port-item:hover { background: #fffcfd; border-color: #f8bbd0; transform: translateY(-2px); }
-
+        .port-more { font-size: 11px; color: var(--accent-pink); opacity: 0.7; }
+        .port-item:hover { background: #fffcfd; border-color: var(--shop-lavender); transform: translateY(-2px); }
     </style>
 </head>
 <body>
@@ -111,7 +115,7 @@
     </div>
 
     <div class="section-box">
-        <div style="font-size: 15px; font-weight: 600; color: #d81b60; margin-bottom: 15px; text-align: center;">☁️ ผลงานที่ผ่านมา</div>
+        <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 15px; text-align: center;">☁️ ผลงานที่ผ่านมา</div>
         
         <div class="port-notice-box">
             <b>หมายเหตุ:</b> เป็นเพียงแนวงานเท่านั้น ทางร้านจะปรับให้เข้ากับไลฟ์สไตล์ของร้าน ไม่สามารถทำตามบรีฟได้ 100% นะคะ
@@ -157,7 +161,7 @@
         </div>
     </div>
     <div class="section-box">
-        <div style="font-size: 15px; font-weight: 600; color: #d81b60; margin-bottom: 15px;">⏰ ระยะเวลาทำงาน</div>
+        <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 15px;">⏰ ระยะเวลาทำงาน</div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <div style="background: linear-gradient(to right, #f8bbd0, #f06292); border-radius: 15px; padding: 15px; color: white; text-align: center;">
                 <span style="font-size: 11px; opacity: 0.9; display: block;">✨ กรณีไม่มีคิว :</span>
@@ -175,16 +179,16 @@
     </div>
 
     <div class="section-box">
-        <div style="font-size: 15px; font-weight: 600; color: #d81b60; margin-bottom: 12px;">📌 หมายเหตุสำคัญ</div>
+        <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 12px;">📌 หมายเหตุสำคัญ</div>
         <div style="background: #fffdf2; border: 1px solid #fff176; border-radius: 15px; padding: 15px;">
-            <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px;">⚡ <span>ปกติการทำงานเฉลี่ย 1-3 วัน หากไม่ติดธุระ</span></div>
-            <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px;">⚡ <span>เวลาที่แจ้งเป็นการเผื่อเวลาเพื่อความเป๊ะค่ะ</span></div>
-            <div style="display: flex; gap: 8px; font-size: 12px;">⚡ <span>ระยะเวลาการทำงาน ไม่รวมรอคิวนะคะ</span></div>
+            <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #795548;">⚡ <span>ปกติการทำงานเฉลี่ย 1-3 วัน หากไม่ติดธุระ</span></div>
+            <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #795548;">⚡ <span>เวลาที่แจ้งเป็นการเผื่อเวลาเพื่อความเป๊ะค่ะ</span></div>
+            <div style="display: flex; gap: 8px; font-size: 12px; color: #795548;">⚡ <span>ระยะเวลาการทำงาน ไม่รวมรอคิวนะคะ</span></div>
         </div>
     </div>
     <div class="section-box">
-        <div style="font-size: 15px; font-weight: 600; color: #d81b60; margin-bottom: 15px;">📋 แบบฟอร์มบรีฟงาน</div>
-        <div id="briefText" style="background: white; border-radius: 15px; padding: 18px; font-size: 13px; line-height: 1.8; border: 1px solid #fce4ec; white-space: pre-line;">
+        <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 15px;">📋 แบบฟอร์มบรีฟงาน</div>
+        <div id="briefText" style="background: white; border-radius: 15px; padding: 18px; font-size: 13px; line-height: 1.8; border: 1px solid #fce4ec; white-space: pre-line; color: var(--text-main);">
             🌸 **แบบฟอร์มบรีฟงาน Pinkjulie Ju** 🌸
             1. ชื่อร้าน/แบรนด์:
             2. ข้อมูลแนะนำร้าน:
@@ -198,7 +202,7 @@
         <button onclick="copyBrief()" style="width:100%; padding:15px; border-radius:35px; border:none; background: #f06292; color:white; font-family:'Mitr'; font-weight:600; cursor:pointer; margin-top:15px; font-size:14px; box-shadow: 0 5px 15px rgba(240, 98, 146, 0.2);">คัดลอกแบบฟอร์ม ✨</button>
     </div>
 
-    <div style="text-align:center; padding-bottom: 50px; font-size: 10px; opacity: 0.5; color: #4a148c; letter-spacing: 1px;">
+    <div style="text-align:center; padding-bottom: 50px; font-size: 10px; opacity: 0.5; color: var(--text-main); letter-spacing: 1px;">
         PINKJULIE JU STUDIO
     </div>
 </div>
