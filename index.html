@@ -8,15 +8,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&display=swap');
 
         :root {
-            /* ธีมชมพูเข้มแบบสะใจตามบรีฟเลยค๊า ✨ */
-            --bg-pink-dark: #f06292; 
-            --bg-pink-mid: #f48fb1;
-            --bg-pink-light: #f8bbd0;
-            --shop-pink: #ffffff; /* ชื่อร้านสีขาวออร่า */
-            --status-pink: #fff1f5; 
-            --glass-white: rgba(255, 255, 255, 0.9);
-            --text-main: #5d5d5d; 
+            /* สีชมพูเข้มแบบเดียวกับหน้าเว็บตัวอย่างเลยค๊า ✨ */
+            --bg-pink: #f48fb1; 
+            --text-white: #ffffff;
             --accent-pink: #ec407a;
+            --glass-white: rgba(255, 255, 255, 0.95);
+            --text-dark: #5d5d5d; 
             --soft-pink-box: #fff1f5;
             --soft-pink-border: #f8bbd0;
         }
@@ -24,10 +21,9 @@
         body {
             margin: 0; padding: 0;
             font-family: 'Mitr', sans-serif;
-            background: linear-gradient(135deg, var(--bg-pink-dark), var(--bg-pink-mid), var(--bg-pink-light));
-            background-attachment: fixed;
+            background-color: var(--bg-pink); /* พื้นหลังสีเดียวแบบคลีน ๆ */
             display: flex; flex-direction: column; align-items: center;
-            min-height: 100vh; color: var(--text-main);
+            min-height: 100vh; color: var(--text-dark);
             overflow-x: hidden;
         }
 
@@ -47,26 +43,26 @@
             margin: 60px 10px; position: relative; z-index: 1;
         }
 
-        .profile-header { text-align: center; margin-bottom: 25px; }
+        .profile-header { text-align: center; margin-bottom: 20px; }
         
         .shop-name { 
-            font-size: 42px; 
-            color: var(--shop-pink); 
+            font-size: 40px; 
+            color: var(--text-white); 
             font-weight: 700; 
             margin: 0;
             letter-spacing: 2px;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* เพิ่มเงาจาง ๆ ให้ดูมีมิติแบบลูกคุณ */
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
         }
 
         .status-badge {
             background: rgba(255, 255, 255, 0.2);
-            border: 1.5px solid rgba(255, 255, 255, 0.5); 
+            border: 1.5px solid rgba(255, 255, 255, 0.4); 
             border-radius: 30px;
             padding: 8px 18px; display: inline-flex; align-items: center; gap: 8px;
             margin-top: 15px; font-size: 13px; 
-            color: #ffffff;
-            font-weight: 400; line-height: 1.4;
-            backdrop-filter: blur(5px);
+            color: var(--text-white);
+            font-weight: 300; line-height: 1.4;
         }
         .dot { height: 8px; width: 8px; background: #fff; border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
         @keyframes pulse {
@@ -76,19 +72,18 @@
         }
         .intro-text-white { 
             text-align: center; 
-            font-size: 14.5px; 
+            font-size: 14px; 
             line-height: 1.8; 
-            color: #ffffff; 
-            margin: 25px 0 35px 0;
-            padding: 0 10px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            color: var(--text-white); 
+            margin: 25px 0 40px 0;
+            padding: 0 15px;
             font-weight: 300;
         }
 
         .section-box {
             background: var(--glass-white); border-radius: 25px;
             padding: 25px; margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
@@ -102,13 +97,13 @@
         .port-list { display: flex; flex-direction: column; gap: 10px; }
         .port-item {
             background: #fff; padding: 15px 20px; border-radius: 18px;
-            text-decoration: none; color: var(--text-main); font-size: 14px;
+            text-decoration: none; color: var(--text-dark); font-size: 14px;
             display: flex; flex-direction: column; align-items: flex-start;
             border: 1px solid #fce4ec; transition: 0.3s;
         }
         .port-title { font-weight: 600; font-size: 14.5px; margin-bottom: 2px; color: #ad1457; }
         .port-more { font-size: 11px; color: var(--accent-pink); opacity: 0.7; }
-        .port-item:hover { background: #fffcfd; border-color: var(--accent-pink); transform: translateY(-2px); }
+        .port-item:hover { border-color: var(--accent-pink); transform: translateY(-2px); }
 
     </style>
 </head>
@@ -184,15 +179,15 @@
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
                 <div style="background: #f48fb1; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0;">2</div>
-                <div style="font-size: 13px;">ส่งบรีฟ รายละเอียดข้อมูลที่ต้องการใส่ในเว็บ</div>
+                <div style="font-size: 13px;">ส่งบรีฟ ข้อมูลที่ต้องการใส่ในเว็บ</div>
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
                 <div style="background: #f06292; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0;">3</div>
-                <div style="font-size: 13px;">ชำระเงิน (มัดจำ 100.- หรือเต็มจำนวน)</div>
+                <div style="font-size: 13px;">ชำระเงิน (มัดจำหรือเต็มจำนวน)</div>
             </div>
             <div style="display: flex; align-items: center; gap: 12px;">
                 <div style="background: #ec407a; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0;">4</div>
-                <div style="font-size: 13px;">รอรับงาน ตามระยะเวลาที่ตกลงกันไว้ค่ะ</div>
+                <div style="font-size: 13px;">รอรับงาน ตามระยะเวลาที่ตกลงกันไว้</div>
             </div>
         </div>
     </div>
@@ -203,17 +198,12 @@
         </div>
         <div style="background: var(--soft-pink-box); border-radius: 15px; padding: 15px; margin-bottom: 12px; border: 1px solid var(--soft-pink-border);">
             <div style="font-weight: 600; font-size: 13px; color: var(--accent-pink); margin-bottom: 5px;">✅ แบบมีประกัน (+100 บาท)</div>
-            <div style="font-size: 12px; line-height: 1.6;">หากมีปัญหาเยอะ จะทำการสร้างเว็บให้ใหม่ 1 ครั้ง สามารถบรีฟใหม่ได้เลยค่ะ ✨</div>
-        </div>
-        <div style="background: var(--soft-pink-box); border-radius: 15px; padding: 15px; margin-bottom: 12px; border: 1px solid var(--soft-pink-border);">
-            <div style="font-weight: 600; font-size: 13px; color: var(--accent-pink); margin-bottom: 5px;">❌ แบบไม่มีประกัน (ไม่รับเคลม)</div>
-            <div style="font-size: 12px; line-height: 1.6;">หากเว็บมีปัญหา จุดไหนแก้ได้จะแก้ให้ หากแก้ไม่ได้จะเป็นไปตามเงื่อนไขร้าน คือไม่รับเคลมเนื่องจากตอนส่งงานเว็บปกติแล้วค่ะ</div>
+            <div style="font-size: 12px; line-height: 1.6;">สร้างเว็บให้ใหม่ 1 ครั้ง สามารถบรีฟใหม่ได้เลยค่ะ ✨</div>
         </div>
         <div style="background: var(--soft-pink-box); border-radius: 15px; padding: 15px; border: 1px solid var(--soft-pink-border);">
             <div style="font-weight: 600; font-size: 13px; color: var(--accent-pink); margin-bottom: 5px;">✍️ บริการแก้ไขในอนาคต</div>
             <div style="font-size: 12px; line-height: 1.6;">
-                • แก้ไขตัวหนังสือ 10 จุด : <b>เหมา 39.-</b><br>
-                • เพิ่มรูปภาพ 1-2 รูป : <b>39.-</b><br>
+                • แก้ไขตัวหนังสือ 10 จุด : <b>39.-</b><br>
                 • เพิ่มรูปภาพ 1-4 รูป : <b>59.-</b>
             </div>
         </div>
@@ -225,49 +215,36 @@
                 <span style="font-size: 11px; opacity: 0.9; display: block;">✨ กรณีไม่มีคิว : 1 - 3 วัน</span>
             </div>
             <div style="background: linear-gradient(to right, #f06292, #d81b60); border-radius: 15px; padding: 15px; color: white; text-align: center;">
-                <span style="font-size: 11px; opacity: 0.9; display: block;">⏳ กรณีมีคิวงาน : ประมาณ 1 - 7 วันค่ะ</span>
+                <span style="font-size: 11px; opacity: 0.9; display: block;">⏳ กรณีมีคิวงาน : ประมาณ 1 - 7 วัน</span>
             </div>
-            <div style="background: linear-gradient(to right, #d81b60, #ad1457); border-radius: 15px; padding: 15px; color: white; text-align: center; border: 1.5px solid #fff;">
-                <span style="font-size: 11px; opacity: 0.9; display: block;">⚡️ งานเร่งด่วน x2 : ภายใน 2 วัน</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="section-box">
-        <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 12px;">📌 หมายเหตุสำคัญ</div>
-        <div style="background: #fffdf2; border: 1px solid #fff176; border-radius: 15px; padding: 15px;">
-            <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #795548;">⚡ <span>ปกติการทำงานเฉลี่ย 1-3 วัน หากไม่ติดธุระ</span></div>
-            <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #795548;">⚡ <span>เวลาที่แจ้งเป็นการเผื่อเวลาเพื่อความเป๊ะค่ะ</span></div>
-            <div style="display: flex; gap: 8px; font-size: 12px; color: #795548;">⚡ <span>ระยะเวลาการทำงาน ไม่รวมรอคิวนะคะ</span></div>
         </div>
     </div>
 
     <div class="section-box">
         <div style="font-size: 15px; font-weight: 600; color: var(--accent-pink); margin-bottom: 15px;">📋 แบบฟอร์มบรีฟงาน</div>
-        <div id="briefText" style="background: white; border-radius: 15px; padding: 18px; font-size: 13px; line-height: 1.8; border: 1px solid #fce4ec; white-space: pre-line; color: var(--text-main);">
+        <div id="briefText" style="background: white; border-radius: 15px; padding: 18px; font-size: 13px; line-height: 1.8; border: 1px solid #fce4ec; white-space: pre-line; color: var(--text-dark);">
             🌸 **แบบฟอร์มบรีฟงาน Pinkjulie Ju** 🌸
             1. ชื่อร้าน/แบรนด์:
             2. ข้อมูลแนะนำร้าน:
             3. รายละเอียดที่ต้องการใส่:
             4. โทนสีที่ชอบ:
             5. เลือกอิโมจิที่ชอบ 3 ตัว:
-            6. ไฟล์รูปภาพ (ส่งแนบในแชท):
-            7. การรับประกัน (เลือก มี/ไม่มี):
-            8. ช่องทางติดต่อ/ลิงก์:
-            9. หมายเหตุเพิ่มเติม:
+            6. ไฟล์รูปภาพ:
+            7. การรับประกัน:
+            8. ช่องทางติดต่อ:
         </div>
-        <button onclick="copyBrief()" style="width:100%; padding:15px; border-radius:35px; border:none; background: #ec407a; color:white; font-family:'Mitr'; font-weight:600; cursor:pointer; margin-top:15px; font-size:14px; box-shadow: 0 5px 15px rgba(236, 64, 122, 0.3);">คัดลอกฟอร์มกรอกบรีฟเรียบร้อยค่ะ ✨</button>
+        <button onclick="copyBrief()" style="width:100%; padding:15px; border-radius:35px; border:none; background: #ec407a; color:white; font-family:'Mitr'; font-weight:600; cursor:pointer; margin-top:15px; font-size:14px; box-shadow: 0 5px 15px rgba(236, 64, 122, 0.3);">คัดลอกแบบฟอร์ม ✨</button>
     </div>
 
-    <div style="text-align:center; padding-bottom: 50px; font-size: 10px; opacity: 0.8; color: #ffffff; letter-spacing: 1px;">
-        PINKJULIE JU STUDIO
+    <div style="text-align:center; padding-bottom: 50px; font-size: 11px; opacity: 0.9; color: #ffffff; letter-spacing: 1px;">
+        PINKJULIE JU STUDIO ✨ MADE WITH LOVE
     </div>
 </div>
 
 <script>
 function createEmojis() {
     const container = document.getElementById('emoji-container');
-    const icons = ['✨', '🎀', '🤍', '💖', '🌸', '🍭', '🫧'];
+    const icons = ['✨', '🎀', '🤍', '💖', '🌸', '🌷', '🫧'];
     setInterval(() => {
         const e = document.createElement('div');
         e.className = 'emoji-fly';
@@ -288,7 +265,7 @@ function copyBrief() {
     area.select();
     document.execCommand("copy");
     document.body.removeChild(area);
-    alert("คัดลอกฟอร์มกรอกบรีฟเรียบร้อยค่ะ ✨");
+    alert("คัดลอกฟอร์มเรียบร้อยค่ะ ✨");
 }
 window.onload = createEmojis;
 </script>
