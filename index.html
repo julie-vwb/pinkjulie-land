@@ -8,10 +8,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap');
 
         :root {
-            --bg-main: #fdf2f8;
+            /* ปรับโทนสีพื้นหลังให้เข้มขึ้น 1 ระดับตามคำขอค่ะ */
+            --bg-main: #fce4ec; /* เข้มกว่าเดิมเล็กน้อย แต่ยังคงความพาสเทล */
             --main-pink: #fbc2eb;
             --soft-purple: #a6c1ee;
-            --white-glass: rgba(255, 255, 255, 0.92);
+            --white-glass: rgba(255, 255, 255, 0.9);
             --accent-color: #ff85a2;
         }
 
@@ -19,7 +20,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Mitr', sans-serif;
-            background: radial-gradient(circle at top, var(--main-pink) 0%, var(--bg-main) 45%, var(--soft-purple) 100%);
+            background: radial-gradient(circle at top, var(--main-pink) 0%, var(--bg-main) 50%, var(--soft-purple) 100%);
             background-attachment: fixed;
             display: flex;
             flex-direction: column;
@@ -50,12 +51,28 @@
             z-index: 1;
         }
 
-        .profile-header { text-align: center; margin-bottom: 30px; }
+        .profile-header { text-align: center; margin-bottom: 30px; position: relative; }
+        
+        /* สไตล์โลโก้แบบวงกลมพร้อมขอบขาวฟุ้งๆ */
         .profile-img { 
             width: 120px; height: 120px; border-radius: 50%; 
             border: 6px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.08); 
             object-fit: cover; background: white;
+            display: block; margin: 0 auto;
         }
+
+        /* --- อิโมจิรอบกรอบโลโก้ที่เพิ่มมาใหม่ค่ะ --- */
+        .header-emoji {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+        .emoji-top-left { top: -15px; left: calc(50% - 65px); }
+        .emoji-top-right { top: -15px; right: calc(50% - 65px); }
+        .emoji-bottom-left { bottom: -15px; left: calc(50% - 65px); }
+        .emoji-bottom-right { bottom: -15px; right: calc(50% - 65px); }
+
+        .shop-name { font-size: 24px; color: #7d5a5a; margin: 15px 0 5px; font-weight: 500; letter-spacing: 0.5px; }
 
         .info-card {
             background: #fff5f8;
@@ -79,7 +96,6 @@
 
         .section-title { font-size: 16px; color: var(--accent-color); margin-bottom: 18px; font-weight: 500; }
 
-        /* ปุ่มดูตัวอย่างงานที่ฝังลิงก์ Drive ให้แล้วค่ะ */
         .port-link {
             display: flex; align-items: center; justify-content: center; gap: 10px;
             background: white; padding: 15px; border-radius: 22px;
@@ -99,12 +115,11 @@
             box-shadow: 0 8px 20px rgba(251, 194, 235, 0.4);
             transition: 0.3s;
         }
-        .copy-btn:active { transform: scale(0.98); }
 
         .footer-credit {
             width: 100%; text-align: center; padding: 20px 0 40px; font-size: 11px; color: #9d8189;
         }
-        .footer-credit span { background: rgba(255, 255, 255, 0.4); padding: 6px 15px; border-radius: 20px; }
+        .footer-credit span { background: rgba(255, 255, 255, 0.4); padding: 6px 15px; border-radius: 20px; backdrop-filter: blur(5px); }
 
         #toast {
             visibility: hidden; min-width: 200px; background: #a389d4; color: white;
@@ -112,8 +127,6 @@
             position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 100;
         }
         #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
-        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
-        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
     </style>
 </head>
 <body>
@@ -122,14 +135,19 @@
 
 <div class="container">
     <div class="profile-header">
-        <img src="Logo.jpeg" class="profile-img" alt="Pinkjulie Ju">
-        <h1 style="font-size: 24px; margin: 15px 0 5px;">PINKJULIE JU</h1>
+        <img src="Logo.png" class="profile-img" alt="PINKJULIE JU">
+        <span class="header-emoji emoji-top-left">🌸</span>
+        <span class="header-emoji emoji-top-right">✨</span>
+        <span class="header-emoji emoji-bottom-left">🤍</span>
+        <span class="header-emoji emoji-bottom-right">🎀</span>
+        
+        <h1 class="shop-name">PINKJULIE JU</h1>
         <div style="font-size: 13px; color: #9d8189;">💻 รับทำหน้าเว็บร้านค้า สไตล์ละมุนลูกคุณ ✨</div>
     </div>
 
     <div class="info-card">
         <strong>⚠️ ข้อควรทราบก่อนสั่งงานนะคะ 💖</strong><br>
-        ลูกค้าสามารถเลือกดูสไตล์งานที่ชอบได้ แต่ผลงานจะขึ้นอยู่กับข้อมูลที่แจ้งเข้ามาค่ะ ไม่มีแบบฟอร์มตายตัว บรีฟให้เป๊ะ 100% ไม่ได้น้า รบกวนดูสไตล์งานก่อนตัดสินใจสั่งนะคะ ✨
+        ลูกค้าสามารถเลือกดูสไตล์งานได้ แต่ผลงานจะขึ้นอยู่กับข้อมูลที่แจ้งเข้ามาค่ะ ไม่มีแบบฟอร์มตายตัว บรีฟให้เป๊ะ 100% ไม่ได้น้า รบกวนดูสไตล์งานก่อนตัดสินใจสั่งนะคะ ✨
     </div>
 
     <div class="section-box">
