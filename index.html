@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinkjulie Ju 🎀 รับทำหน้าเว็บร้านค้า</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap');
+
+        :root {
+            --bg-pink: #fbc2eb;
+            --bg-blue: #a6c1ee;
+            --bg-white: #ffffff;
+            --text-color: #7d5a5a;
+            --accent-pink: #ffafbd;
+            --white-glass: rgba(255, 255, 255, 0.78);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Mitr', sans-serif;
+            background: radial-gradient(circle at top left, var(--bg-pink) 0%, var(--bg-white) 45%, var(--bg-blue) 100%);
+            background-attachment: fixed;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .emoji-fly {
+            position: fixed;
+            top: -10%;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) translateX(70px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: var(--white-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 40px;
+            padding: 40px 25px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin: 50px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 26px; margin-bottom: 5px; color: #a389d4; letter-spacing: 1px; }
+        .intro-text { font-size: 14px; line-height: 1.8; margin-bottom: 30px; color: #8b6d6d; }
+
+        .section-title {
+            background: white;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 25px 0 15px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            color: #ff85a2;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            padding: 22px;
+            margin-bottom: 20px;
+            text-align: left;
+            border: 1px solid rgba(251, 194, 235, 0.3);
+        }
+
+        .item { display: flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px dashed #f5f5f5; padding-bottom: 8px; font-size: 14px; }
+        .highlight { font-weight: 500; color: #ff85a2; }
+
+        .btn-group { display: grid; gap: 12px; margin-top: 20px; }
+        .btn {
+            padding: 14px;
+            border-radius: 35px;
+            font-family: 'Mitr', sans-serif;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 400;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main { background: var(--accent-pink); color: white; box-shadow: 0 6px 20px rgba(255, 175, 189, 0.4); }
+        .btn-sub { background: white; color: var(--text-color); border: 1.5px solid var(--primary-pink); }
+        .btn:hover { transform: translateY(-3px); opacity: 0.95; }
+
+        .note { font-size: 12px; margin-top: 30px; color: #b5a1a1; font-style: italic; }
+
+        #toast {
+            visibility: hidden;
+            min-width: 220px;
+            background-color: #a389d4;
+            color: #fff;
+            text-align: center;
+            border-radius: 12px;
+            padding: 12px;
+            position: fixed;
+            z-index: 10;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+    </style>
+</head>
+<body>
+
+<div id="emoji-container"></div>
+
+<div class="container">
+    <div class="logo-container">
+        <img src="Logo.jpeg" alt="Pinkjulie Ju Logo">
+    </div>
+
+    <h1>✨ Pinkjulie Ju ✨</h1>
+    
+    <div class="intro-text">
+        🌸 สร้างเว็บร้าน สไตล์พิ้งจู 🎀<br>
+        เว็บโทนหวาน ๆ เรียบร้อย ละมุน เหมาะกับร้านที่อยากมีหน้าเว็บส่วนตัว<br>
+        เดี๋ยวเค้าจัดการรวมข้อมูลครบจบในเว็บเดียวแบบน่ารักให้เองงง 💻🤍
+    </div>
+
+    <div class="section-title">📋 แบบฟอร์มบรีฟงาน (ปรับเปลี่ยนได้ตามใจชอบ)</div>
+    <div class="content-card" style="background: #fffcfd;">
+        <div id="briefContent" style="font-size: 13px; line-height: 1.8;">
+            🌸 **แบบฟอร์มบรีฟงาน Pinkjulie Ju** 🌸<br>
+            (ส่วนไหนไม่มีลบออกได้ / เพิ่มหัวข้อ & หมายเหตุเองได้เลยน้า)<br><br>
+            1. ชื่อร้าน/แบรนด์:<br>
+            2. ข้อมูลแนะนำร้าน:<br>
+            3. รายละเอียดที่ต้องการใส่:<br>
+            4. ใส่โลโก้/รูปแบนเนอร์ (หากมีส่งแนบมาได้เลยค่ะ):<br>
+            5. ช่องทางติดต่อ/ลิงก์โซเชียล:<br>
+            6. หมายเหตุเพิ่มเติม (ถ้ามี):
+        </div>
+    </div>
+    
+    <div class="btn-group">
+        <button class="btn btn-main" onclick="copyText()">คัดลอกแบบฟอร์มแล้วทักแชท 📋</button>
+        <a href="https://lin.ee/xzmCpit" class="btn btn-sub">Line : @298djtan (มี @)</a>
+        <a href="https://www.facebook.com/profile.php?id=61554192600355" class="btn btn-sub">Facebook : Pinkjulie Ju</a>
+    </div>
+
+    <div class="note">
+        ✨ หากมีรูปภาพส่วนไหนอยากใส่เพิ่ม ส่งไฟล์แนบมาได้ตลอดเลยนะคะ ✨
+    </div>
+</div>
+
+<div id="toast">คัดลอกสำเร็จ! ปรับเปลี่ยนบรีฟได้เลยนะคะ 💖</div>
+<script>
+function createEmojis() {
+    const container = document.getElementById('emoji-container');
+    const icons = ['🌸', '✨', '🎀', '🤍', '🫧', '🪄', '💻'];
+    setInterval(() => {
+        const e = document.createElement('div');
+        e.className = 'emoji-fly';
+        e.innerText = icons[Math.floor(Math.random() * icons.length)];
+        e.style.left = Math.random() * 100 + 'vw';
+        const s = Math.random() * 20 + 12;
+        e.style.fontSize = s + 'px';
+        const d = Math.random() * 4 + 6;
+        e.style.animationDuration = d + 's';
+        e.style.opacity = Math.random() * 0.6 + 0.2;
+        container.appendChild(e);
+        setTimeout(() => { e.remove(); }, d * 1000);
+    }, 700);
+}
+
+function copyText() {
+    // ข้อความบรีฟเวอร์ชันอัปเดตตามคำขอแม่ค่ะ
+    const text = `🌸 แบบฟอร์มบรีฟงาน Pinkjulie Ju 🌸
+(ส่วนไหนไม่มีลบออกได้ / เพิ่มหัวข้อ & หมายเหตุเองได้เลยน้า)
+
+1. ชื่อร้าน/แบรนด์:
+2. ข้อมูลแนะนำร้าน:
+3. รายละเอียดที่ต้องการใส่:
+4. ใส่โลโก้/รูปแบนเนอร์ (หากมีส่งแนบมาได้เลยค่ะ):
+5. ช่องทางติดต่อ/ลิงก์โซเชียล:
+6. หมายเหตุเพิ่มเติม (ถ้ามี):`;
+
+    const area = document.createElement("textarea");
+    area.value = text;
+    document.body.appendChild(area);
+    area.select();
+    document.execCommand("copy");
+    document.body.removeChild(area);
+
+    const toast = document.getElementById("toast");
+    toast.className = "show";
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+}
+
+window.onload = createEmojis;
+</script>
+
+</body>
+</html>
