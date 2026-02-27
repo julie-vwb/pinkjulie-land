@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinkjulie Ju 🎀 Shop</title>
+    <title>Pinkjulie Ju 🎀 Shop Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap');
 
@@ -11,15 +11,15 @@
             --bg-pastel: #fdf2f8;
             --main-pink: #fbc2eb;
             --soft-purple: #a6c1ee;
-            --white-glass: rgba(255, 255, 255, 0.95);
+            --white-glass: rgba(255, 255, 255, 0.9);
+            --text-purple: #8b5cf6;
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: 'Mitr', sans-serif;
-            /* ไล่สีพื้นหลังแบบ Radial ให้ความรู้สึกฟุ้งกระจายตามรูปเรฟค่ะ */
-            background: radial-gradient(circle at top, var(--main-pink) 0%, var(--bg-pastel) 50%, var(--soft-purple) 100%);
+            background: radial-gradient(circle at top, var(--main-pink) 0%, var(--bg-pastel) 45%, var(--soft-purple) 100%);
             background-attachment: fixed;
             display: flex;
             justify-content: center;
@@ -27,6 +27,7 @@
             overflow-x: hidden;
         }
 
+        /* Floating Emojis */
         .emoji-fly {
             position: fixed;
             top: -10%;
@@ -41,106 +42,135 @@
         .container {
             width: 92%;
             max-width: 500px;
-            margin: 40px 10px;
+            margin: 50px 10px;
             position: relative;
             z-index: 1;
         }
 
+        /* Profile Header */
         .profile-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
-            border: 6px solid white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 5px solid white;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
             background: white;
             object-fit: cover;
         }
+        .shop-name { font-size: 26px; color: #7d5a5a; margin: 15px 0 5px; font-weight: 500; letter-spacing: 0.5px; }
 
-        .shop-name { font-size: 24px; color: #7d5a5a; margin: 15px 0 5px; font-weight: 500; }
-        .shop-tagline { font-size: 13px; color: #9d8189; margin-bottom: 20px; }
-
-        .status-bar {
+        /* Status Banner */
+        .status-pill {
             background: white;
             border: 2px dashed #fbc2eb;
-            border-radius: 20px;
-            padding: 15px;
+            border-radius: 25px;
+            padding: 12px 20px;
             text-align: center;
             margin-bottom: 25px;
+            display: block;
+            text-decoration: none;
         }
-        .status-dot {
-            height: 10px;
-            width: 10px;
-            background-color: #4ade80;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 5px;
-            box-shadow: 0 0 8px #4ade80;
-        }
+        .dot { height: 10px; width: 10px; background-color: #4ade80; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #4ade80; }
 
-        .card {
+        /* Portfolio & Work Preview Section */
+        .section-box {
             background: var(--white-glass);
-            border-radius: 25px;
+            border-radius: 28px;
             padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            text-align: left;
+            margin-bottom: 22px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+            border: 1.5px solid rgba(255, 255, 255, 0.7);
+        }
+        .section-title {
+            font-size: 16px;
+            color: #ff85a2;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
         }
 
-        .brief-box {
-            background: #fffcfd;
+        /* Work Samples Grid */
+        .work-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .work-item {
+            background: white;
+            border-radius: 18px;
+            padding: 10px;
+            text-align: center;
             border: 1px solid #fdf2f8;
-            border-radius: 15px;
-            padding: 15px;
+            font-size: 12px;
+            color: #9d8189;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .work-item:hover { transform: translateY(-3px); border-color: var(--main-pink); }
+        .work-icon { font-size: 20px; display: block; margin-bottom: 5px; }
+
+        /* Brief Area */
+        .brief-container {
+            background: #fffcfd;
+            border-radius: 18px;
+            padding: 18px;
             font-size: 13px;
             line-height: 1.8;
             color: #7d5a5a;
+            border: 1px solid #fbc2eb;
         }
 
-        .copy-btn {
+        .copy-button {
             width: 100%;
-            background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
             color: white;
             border: none;
-            padding: 14px;
-            border-radius: 30px;
+            padding: 15px;
+            border-radius: 35px;
             font-family: 'Mitr', sans-serif;
             margin-top: 15px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(251, 194, 235, 0.4);
+            font-weight: 500;
+            box-shadow: 0 8px 20px rgba(251, 194, 235, 0.4);
         }
 
-        .contact-btn {
+        .social-link {
             display: block;
             text-align: center;
             padding: 12px;
             background: white;
-            border: 1px solid #fbc2eb;
             border-radius: 25px;
             margin-top: 10px;
             color: #9d8189;
             text-decoration: none;
             font-size: 13px;
+            border: 1px solid #fbc2eb;
         }
 
         #toast {
             visibility: hidden;
-            min-width: 200px;
+            min-width: 220px;
             background: #a389d4;
             color: white;
             text-align: center;
-            border-radius: 10px;
-            padding: 12px;
+            border-radius: 12px;
+            padding: 14px;
             position: fixed;
-            bottom: 30px;
+            bottom: 35px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 10;
+            z-index: 100;
         }
         #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 35px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 35px; opacity: 1;} to {bottom: 0; opacity: 0;} }
     </style>
 </head>
 <body>
@@ -151,17 +181,36 @@
     <div class="profile-header">
         <img src="Logo.jpeg" class="profile-img" alt="Pinkjulie Ju">
         <div class="shop-name">PINKJULIE JU</div>
-        <div class="shop-tagline">✨ รับทำหน้าเว็บร้านค้า สไตล์ละมุนลูกคุณ ✨</div>
+        <div style="font-size: 13px; color: #9d8189;">🌸 รับทำหน้าเว็บร้านค้า สไตล์ละมุนลูกคุณ 🎀</div>
     </div>
 
-    <div class="status-bar">
-        <span class="status-dot"></span> 
-        <strong style="color: #ff85a2;">เปิดรับคิวปกติอยู่นะคะ 🎀</strong>
+    <a href="#" class="status-pill">
+        <span class="dot"></span>
+        <span style="color: #ff85a2; font-weight: 500;">เปิดรับคิวปกติอยู่นะคะ ✨</span>
+    </a>
+
+    <div class="section-box">
+        <div class="section-title">☁️ เลือกชมตัวอย่างงาน</div>
+        <div class="work-grid">
+            <a href="URL_GOOGLE_DRIVE_1" class="work-item">
+                <span class="work-icon">🎨</span> สไตล์พาสเทล
+            </a>
+            <a href="URL_GOOGLE_DRIVE_2" class="work-item">
+                <span class="work-icon">🌙</span> สไตล์ดาร์ก/หรู
+            </a>
+            <a href="URL_GOOGLE_DRIVE_3" class="work-item">
+                <span class="work-icon">📸</span> รีวิวจากลูกค้า
+            </a>
+            <a href="URL_GOOGLE_DRIVE_4" class="work-item">
+                <span class="work-icon">📁</span> ผลงานทั้งหมด
+            </a>
+        </div>
+        <div style="font-size: 11px; color: #b5a1a1; text-align: center;">* คลิกที่ไอคอนเพื่อดูรูปภาพตัวอย่างงานเพิ่มเติมนะคะ</div>
     </div>
 
-    <div class="card">
-        <div style="font-size: 15px; color: #ff85a2; margin-bottom: 15px;">📋 แบบฟอร์มบรีฟงาน</div>
-        <div class="brief-box" id="briefText">
+    <div class="section-box">
+        <div class="section-title">📋 แบบฟอร์มบรีฟงาน</div>
+        <div class="brief-container" id="briefContent">
             🌸 **แบบฟอร์มบรีฟงาน Pinkjulie Ju** 🌸<br>
             (ส่วนไหนไม่มีลบออกได้ / เพิ่มหัวข้อ & หมายเหตุเองได้เลยน้า)<br><br>
             1. ชื่อร้าน/แบรนด์:<br>
@@ -171,30 +220,30 @@
             5. ช่องทางติดต่อ/ลิงก์โซเชียล:<br>
             6. หมายเหตุเพิ่มเติม (ถ้ามี):
         </div>
-        <button class="copy-btn" onclick="copyBrief()">คัดลอกแบบฟอร์มแล้วทักแชท 📋</button>
-        <a href="https://lin.ee/xzmCpit" class="contact-btn">Line : @298djtan (มี @) 🫶🏻</a>
-        <a href="https://www.facebook.com/profile.php?id=61554192600355" class="contact-btn">Facebook : Pinkjulie Ju</a>
+        <button class="copy-button" onclick="copyBrief()">คัดลอกแบบฟอร์มแล้วทักแชท 📋</button>
+        <a href="https://lin.ee/EBW88DH" class="social-link">Line : @355tmjpr (มี @) 🫶🏻</a>
+        <a href="https://www.facebook.com/share/1DveZBFdqz/" class="social-link">Facebook ของทางร้าน ✨</a>
     </div>
 </div>
 
-<div id="toast">คัดลอกสำเร็จ! นำไปวางในแชทได้เลยนะคะ 💖</div>
+<div id="toast">คัดลอกแบบฟอร์มเรียบร้อยค่ะ 💖</div>
 <script>
 function createFloatingEmoji() {
     const container = document.getElementById('emoji-container');
-    const icons = ['🌸', '✨', '🎀', '🤍', '🫧', '🪄', '💻'];
+    const icons = ['🌸', '✨', '🎀', '🤍', '🫧', '🪄', '💻', '☁️'];
     setInterval(() => {
         const e = document.createElement('div');
         e.className = 'emoji-fly';
         e.innerText = icons[Math.floor(Math.random() * icons.length)];
         e.style.left = Math.random() * 100 + 'vw';
-        const size = Math.random() * 20 + 12;
+        const size = Math.random() * 22 + 10;
         e.style.fontSize = size + 'px';
-        const duration = Math.random() * 4 + 6;
+        const duration = Math.random() * 5 + 5;
         e.style.animationDuration = duration + 's';
-        e.style.opacity = Math.random() * 0.6 + 0.2;
+        e.style.opacity = Math.random() * 0.5 + 0.3;
         container.appendChild(e);
         setTimeout(() => { e.remove(); }, duration * 1000);
-    }, 800);
+    }, 750);
 }
 
 function copyBrief() {
