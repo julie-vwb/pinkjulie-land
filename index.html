@@ -8,21 +8,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&display=swap');
 
         :root {
-            /* โทนสีม่วงไล่ลงไปชมพูแบบสดใสตามบรีฟค่ะ */
-            --bg-purple: #ce93d8; 
-            --bg-pink: #f8bbd0;
-            --shop-name-color: #d81b60; /* ชมพูเข้มแบบไม่จี๊ดแต่สดใส */
-            --white-glass: rgba(255, 255, 255, 0.9);
+            --bg-top: #ce93d8; 
+            --bg-bottom: #f8bbd0;
+            --shop-pink: #d81b60; /* ชมพูเข้มแบบละมุนสดใส */
+            --glass-white: rgba(255, 255, 255, 0.88);
             --text-dark: #4a148c;
-            --accent-pink: #f06292;
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: 'Mitr', sans-serif;
-            /* พื้นหลังม่วงไล่ลงไปเป็นชมพูสดใส */
-            background: linear-gradient(to bottom, var(--bg-purple) 0%, var(--bg-pink) 100%);
+            background: linear-gradient(to bottom, var(--bg-top) 0%, var(--bg-bottom) 100%);
             background-attachment: fixed;
             display: flex;
             flex-direction: column;
@@ -32,11 +29,8 @@
         }
 
         .emoji-fly {
-            position: fixed;
-            top: -10%;
-            z-index: 0;
-            animation: fall linear infinite;
-            pointer-events: none;
+            position: fixed; top: -10%; z-index: 0;
+            animation: fall linear infinite; pointer-events: none;
         }
         @keyframes fall {
             0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
@@ -44,71 +38,77 @@
         }
 
         .container {
-            width: 92%;
-            max-width: 500px;
-            margin: 50px 10px 20px;
+            width: 90%;
+            max-width: 450px;
+            margin: 50px 10px;
             position: relative;
             z-index: 1;
         }
 
-        /* Profile Header */
         .profile-header { text-align: center; margin-bottom: 25px; }
-        
-        /* จุดสถานะกะพริบ */
-        .status-pill {
-            background: white; border-radius: 25px; padding: 6px 15px;
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 13px; font-weight: 500; color: #2e7d32; margin-bottom: 15px;
+
+        /* ชื่อร้าน: ชมพูเข้ม ตัวหนา ไร้เงา */
+        .shop-name { 
+            font-size: 38px; color: var(--shop-pink); 
+            font-weight: 700; margin: 0 0 10px 0; text-shadow: none;
         }
-        .status-dot {
+
+        /* ปุ่มสถานะ: ย้ายมาอยู่ถัดจากชื่อร้านตามบรีฟค่ะ */
+        .status-badge {
+            background: white; border-radius: 30px; padding: 6px 16px;
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 13px; color: #2e7d32; margin-top: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px dashed #4caf50;
+        }
+        .dot {
             height: 8px; width: 8px; background-color: #4caf50;
             border-radius: 50%; animation: pulse 1.5s infinite;
         }
         @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(76, 175, 80, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.6); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(76, 175, 80, 0); }
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
         }
 
-        /* ชื่อร้านชมพูเข้ม ตัวหนา ไม่มีเงา */
-        .shop-name { 
-            font-size: 38px; color: var(--shop-name-color); 
-            font-weight: 700; margin: 5px 0; text-shadow: none;
+        .intro-box {
+            background: var(--glass-white); border-radius: 28px;
+            padding: 22px; text-align: center; margin-bottom: 20px;
+            font-size: 13.5px; line-height: 1.8; border: 1px solid rgba(255,255,255,0.6);
         }
 
-        .section-box {
-            background: var(--white-glass);
-            border-radius: 28px;
-            padding: 22px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+        .port-section {
+            background: var(--glass-white); border-radius: 28px;
+            padding: 22px; margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 16px; font-weight: 600; color: var(--shop-pink);
+            margin-bottom: 15px; text-align: center;
+        }
+        .port-list { display: flex; flex-direction: column; gap: 10px; }
+        .port-item {
+            background: white; padding: 14px 18px; border-radius: 20px;
+            text-decoration: none; color: #5e35b1; font-size: 13px;
+            display: flex; justify-content: space-between; align-items: center;
+            border: 1px solid #f3e5f5; transition: 0.2s;
+        }
+        .port-item:hover { transform: translateX(6px); background: #fdf4f7; border-color: var(--shop-pink); }
+
+        .info-card {
+            background: var(--glass-white); border-radius: 28px;
+            padding: 22px; margin-bottom: 20px; font-size: 13px;
+        }
+        .highlight { color: var(--shop-pink); font-weight: 600; }
+
+        .btn-copy {
+            width: 100%; padding: 16px; border-radius: 35px; border: none;
+            background: linear-gradient(135deg, var(--shop-pink), var(--bg-top));
+            color: white; font-family: 'Mitr', sans-serif; font-weight: 600;
+            cursor: pointer; box-shadow: 0 8px 20px rgba(216, 27, 96, 0.3);
+            margin-top: 15px; font-size: 15px;
         }
 
-        .intro-text { font-size: 13.5px; line-height: 1.8; text-align: center; color: #6a1b9a; }
-
-        .section-title { font-size: 16px; color: var(--shop-name-color); margin-bottom: 15px; font-weight: 600; text-align: center; }
-
-        /* สไตล์ปุ่มตัวอย่างงานแบบใหม่ */
-        .port-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .port-btn {
-            background: white; padding: 12px 8px; border-radius: 18px;
-            text-decoration: none; color: var(--text-dark); font-size: 12px;
-            border: 1.5px solid #fbc2eb; text-align: center; transition: 0.3s;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .port-btn:hover { transform: translateY(-3px); background: #fff5f8; border-color: var(--accent-pink); }
-
-        .queue-card { background: #fff8fb; border: 1.5px dashed var(--accent-pink); border-radius: 20px; padding: 18px; font-size: 13px; line-height: 1.8; }
-        
-        .copy-btn {
-            width: 100%; background: linear-gradient(135deg, var(--shop-name-color), var(--bg-purple)); color: white;
-            border: none; padding: 16px; border-radius: 35px; font-family: 'Mitr', sans-serif;
-            margin-top: 15px; cursor: pointer; font-weight: 600; font-size: 15px;
-        }
-
-        .footer-credit { width: 100%; text-align: center; padding: 20px 0 40px; font-size: 11px; }
-        .footer-credit span { background: rgba(255, 255, 255, 0.4); padding: 8px 18px; border-radius: 20px; }
+        .footer { font-size: 11px; text-align: center; padding: 25px; opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -117,51 +117,45 @@
 
 <div class="container">
     <div class="profile-header">
-        <div class="status-pill"><span class="status-dot"></span> เปิดรับออเดอร์อยู่นะคะ ✨</div>
         <h1 class="shop-name">PINKJULIE JU</h1>
+        <div class="status-badge"><span class="dot"></span> เปิดรับออเดอร์อยู่นะคะ 🌸</div>
     </div>
 
-    <div class="section-box">
-        <div class="intro-text">
-            เว็บโทนหวาน ๆ เรียบร้อย ดูละมุน เหมาะกับร้านที่อยากมีหน้าเว็บเป็นของตัวเอง ไม่อยากทำเองค่ะ รวบรวมข้อมูลส่งมาเลยค่าเดี๋ยวเค้าจัดการรวมข้อมูลครบในเว็บเดียวแบบน่ารักครบจบให้เองงง 💻🤍<br><br>
-            <strong>ภายในเว็บมีได้ทั้ง:</strong><br>
-            • หน้าแนะนำร้าน • รวมผลงาน • ขั้นตอนสั่งงาน<br>
-            • ปุ่มลิงก์โซเชียลครบ • ดีไซน์โทนละมุนตามสไตล์ร้าน<br><br>
-            <small>สามารถเอาไปปักไว้หน้าไบโอหรือเอาไว้ส่งให้ลูกค้าได้เลยน้า ￼✨</small>
+    <div class="intro-box">
+        เว็บโทนหวาน ๆ เรียบร้อย ดูละมุน เหมาะกับร้านที่อยากมีหน้าเว็บเป็นของตัวเอง ไม่อยากทำเองค่ะ รวบรวมข้อมูลส่งมาเลยค่าเดี๋ยวเค้าจัดการรวมข้อมูลครบในเว็บเดียวแบบน่ารักครบจบให้เองงง 💻🤍<br><br>
+        <strong>✨ ครบจบในเว็บเดียว ✨</strong><br>
+        แนะนำร้าน • รวมผลงาน • ขั้นตอนการสั่ง • ลิงก์โซเชียล<br>
+        <small>(ปักหน้าไบโอ หรือส่งให้ลูกค้าดูได้เลยน้า)</small>
+    </div>
+
+    <div class="port-section">
+        <div class="section-title">☁️ เลือกดูสไตล์ผลงานที่ชอบ</div>
+        <div class="port-list">
+            <a href="https://julie-vwb.github.io/luna-webstudio/" target="_blank" class="port-item">Luna Webstudio</a>
+            <a href="https://julie-vwb.github.io/waray-design/" target="_blank" class="port-item">Waray Design</a>
+            <a href="https://julie-vwb.github.io/meow-font/" target="_blank" class="port-item">Meowfont Shop</a>
+            <a href="https://julie-vwb.github.io/tanewcutie-design/" target="_blank" class="port-item">Tanewcutie Design</a>
+            <a href="https://julie-vwb.github.io/babybear-design/" target="_blank" class="port-item">Babybear Studio</a>
+            <a href="https://julie-vwb.github.io/cooper-shop/" target="_blank" class="port-item">Cooper Shop</a>
+            <a href="https://julie-vwb.github.io/cxllmestore-shop/" target="_blank" class="port-item">Cxllme Store</a>
+            <a href="https://julie-vwb.github.io/mahatep-shop/" target="_blank" class="port-item">Mahatep Shop</a>
+            <a href="https://2ydmvyydg7-lang.github.io/pinkjulie-studio/" target="_blank" class="port-item" style="border-color: var(--shop-pink); font-weight: 500;">Pinkjulie Studio ✨</a>
         </div>
     </div>
 
-    <div class="section-box">
-        <div class="section-title">☁️ เลือกดูสไตล์งานที่ชอบ</div>
-        <div class="port-grid">
-            <a href="https://julie-vwb.github.io/luna-webstudio/" target="_blank" class="port-btn">Luna Studio</a>
-            <a href="https://julie-vwb.github.io/waray-design/" target="_blank" class="port-btn">Waray Design</a>
-            <a href="https://julie-vwb.github.io/meow-font/" target="_blank" class="port-btn">Meow Font</a>
-            <a href="https://julie-vwb.github.io/tanewcutie-design/" target="_blank" class="port-btn">Tanew Cutie</a>
-            <a href="https://julie-vwb.github.io/babybear-design/" target="_blank" class="port-btn">BabyBear</a>
-            <a href="https://julie-vwb.github.io/cooper-shop/" target="_blank" class="port-btn">Cooper Shop</a>
-            <a href="https://julie-vwb.github.io/cxllmestore-shop/" target="_blank" class="port-btn">Cxllme Store</a>
-            <a href="https://julie-vwb.github.io/mahatep-shop/" target="_blank" class="port-btn">Mahatep</a>
-            <a href="https://2ydmvyydg7-lang.github.io/pinkjulie-studio/" target="_blank" class="port-btn" style="grid-column: span 2;">Pinkjulie Studio ✨</a>
-        </div>
-        <p style="font-size: 11px; text-align: center; margin-top: 15px; color: var(--accent-pink);">*หมายเหตุ: งานจริงปรับตามข้อมูลลูกค้า ไม่เป๊ะตามตัวอย่างน้า*</p>
+    <div class="info-card">
+        <div class="section-title">📅 เงื่อนไข & การชำระเงิน</div>
+        ✨ <span class="highlight">ไม่มีคิว :</span> 1-3 วัน (เร็วสุดในวันนั้น)<br>
+        ⏳ <span class="highlight">มีคิว :</span> ประมาณ 1-7 วันค่ะ<br>
+        💳 <span class="highlight">มัดจำ :</span> เริ่มต้น 109.- (หักราคาเต็มวันส่งงาน)<br><br>
+        🏦 **กสิกร :** อนุสรา เท่านั้น<br>
+        📱 **วอเลท :** +2 บาท (โอนผิดชื่อไม่คืนเงินค่ะ)<br>
+        <button class="btn-copy" onclick="copyBrief()">คัดลอกแบบฟอร์มบรีฟงาน 📋</button>
     </div>
 
-    <div class="section-box">
-        <div class="section-title">📅 การจองคิว & ชำระเงิน</div>
-        <div class="queue-card">
-            ✨ **ไม่มีคิว :** 1-3 วัน (เร็วสุดในวันนั้น)<br>
-            ⏳ **มีคิว :** ประมาณ 1-7 วันค่ะ<br>
-            💳 **จองคิว :** มัดจำ **109.-** (หักราคาเต็มวันส่งงาน)<br>
-            🏦 **ธนาคาร :** กสิกร อนุสรา เท่านั้น<br>
-            📱 **วอเลท :** +2 บาท (โอนผิดชื่อไม่คืนเงินทุกกรณี)
-        </div>
-        <button class="copy-btn" onclick="copyBrief()">คัดลอกแบบฟอร์มบรีฟงาน 📋</button>
+    <div class="footer">
+        <span>made with 💜 PINKJULIE JU</span>
     </div>
-</div>
-
-<div class="footer-credit">
-    <span>made with ❤️ PINKJULIE JU</span>
 </div>
 <script>
 function createEmojis() {
@@ -187,9 +181,9 @@ function copyBrief() {
 1. ชื่อร้าน/แบรนด์:
 2. ข้อมูลแนะนำร้าน:
 3. รายละเอียดที่ต้องการใส่:
-4. โทนสีที่ชอบ (แจ้งเป็น #โค้ดสี ได้เลย):
+4. โทนสีที่ชอบ:
 5. เลือกอิโมจิที่ชอบมา 3 ตัว:
-6. ไฟล์รูปภาพ (ส่งแนบมาในแชทได้เลย):
+6. ไฟล์รูปภาพ (ส่งแนบมาในแชท):
 7. ช่องทางติดต่อ/ลิงก์ต่างๆ:
 8. หมายเหตุเพิ่มเติม:`;
 
@@ -199,7 +193,7 @@ function copyBrief() {
     area.select();
     document.execCommand("copy");
     document.body.removeChild(area);
-    alert("คัดลอกบรีฟเรียบร้อยค่ะ ทักแชทส่งข้อมูลได้เลยน้า 💖");
+    alert("คัดลอกบรีฟเรียบร้อยค่ะ ทักแชทมาได้เลยน้า 💖");
 }
 window.onload = createEmojis;
 </script>
