@@ -11,10 +11,8 @@
             --bg-sky: #e3f2fd;
             --bg-pink: #fce4ec;
             --bg-purple: #f3e5f5;
-            /* สีม่วงอ่อนพาสเทลสำหรับชื่อร้านตามบรีฟค๊า */
             --shop-lavender: #ce93d8; 
             --glass-white: rgba(255, 255, 255, 0.85);
-            /* เปลี่ยนจากสีม่วงเข้ม เป็นสีเทาอมน้ำตาลนวลๆ ให้ดูมินิมอลค๊า */
             --text-main: #5d5d5d; 
             --accent-pink: #f06292;
         }
@@ -26,7 +24,7 @@
             background-attachment: fixed;
             display: flex; flex-direction: column; align-items: center;
             min-height: 100vh; 
-            color: var(--text-main); /* ใช้สีใหม่ทั้้งเว็บ */
+            color: var(--text-main);
             overflow-x: hidden;
         }
 
@@ -48,7 +46,6 @@
 
         .profile-header { text-align: center; margin-bottom: 35px; }
         
-        /* ชื่อร้านสีม่วงพาสเทลอ่อนๆ ตามบรีฟแม่เลยค่ะ ✨ */
         .shop-name { 
             font-size: 38px; 
             color: var(--shop-lavender); 
@@ -58,13 +55,14 @@
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
         }
 
+        /* ปรับสถานะเป็นพื้นหลังใส ขอบเส้นประ ตามเรฟเลยค๊า ✨ */
         .status-badge {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(8px);
-            border-radius: 50px;
-            padding: 6px 20px; display: inline-flex; align-items: center; gap: 8px;
+            background: transparent; /* สีใส */
+            border: 2px dashed var(--accent-pink); /* ขอบเส้นประสีชมพู */
+            border-radius: 20px;
+            padding: 8px 25px; display: inline-flex; align-items: center; gap: 8px;
             margin-top: 15px; font-size: 13px; color: var(--accent-pink);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            font-weight: 500;
         }
         .dot { height: 8px; width: 8px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; }
         @keyframes pulse {
@@ -104,8 +102,8 @@
 <div id="emoji-container"></div>
 <div class="container">
     <div class="profile-header">
-        <h1 class="shop-name">PINKJULIE JU</h1>
-        <div class="status-badge"><span class="dot"></span> รับออเดอร์ปกติค่ะ ✨</div>
+        <h1 class="shop-name">🪸PINKJULIE JU🪸</h1>
+        <div class="status-badge"><span class="dot"></span> รับออเดอร์ปกติค่ะ สามารถทักสอบถามคิวปัจจุบันได้เลยนะคะ ✨</div>
     </div>
 
     <div class="section-box">
@@ -127,35 +125,35 @@
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
             <a href="https://julie-vwb.github.io/waray-design/" target="_blank" class="port-item">
-                <span class="port-title">Waray Design 🎨</span>
+                <span class="port-title">Waray Design 🌙</span>
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
             <a href="https://julie-vwb.github.io/meow-font/" target="_blank" class="port-item">
-                <span class="port-title">Meowfont Shop 🐾</span>
+                <span class="port-title">Meowfont Shop 🌙</span>
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
             <a href="https://julie-vwb.github.io/tanewcutie-design/" target="_blank" class="port-item">
-                <span class="port-title">Tanewcutie Design ✨</span>
+                <span class="port-title">Tanewcutie Design 🌙</span>
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
             <a href="https://julie-vwb.github.io/babybear-design/" target="_blank" class="port-item">
-                <span class="port-title">Babybear Studio 🧸</span>
+                <span class="port-title">Babybear Studio 🌙</span>
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
             <a href="https://julie-vwb.github.io/cooper-shop/" target="_blank" class="port-item">
-                <span class="port-title">Cooper Shop 🐶</span>
+                <span class="port-title">Cooper Shop 🌙</span>
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
             <a href="https://julie-vwb.github.io/cxllmestore-shop/" target="_blank" class="port-item">
-                <span class="port-title">Cxllme Store 🛍️</span>
+                <span class="port-title">Cxllme Store 🌙</span>
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
             <a href="https://julie-vwb.github.io/mahatep-shop/" target="_blank" class="port-item">
-                <span class="port-title">Mahatep Shop 🪄</span>
+                <span class="port-title">Mahatep Shop 🌙</span>
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
             <a href="https://2ydmvyydg7-lang.github.io/pinkjulie-studio/" target="_blank" class="port-item">
-                <span class="port-title">Pinkjulie Studio ✨</span>
+                <span class="port-title">Pinkjulie Studio 🌙</span>
                 <span class="port-more">คลิกเพื่อดูเพิ่มเติม</span>
             </a>
         </div>
@@ -231,7 +229,7 @@ function copyBrief() {
     area.select();
     document.execCommand("copy");
     document.body.removeChild(area);
-    alert("คัดลอกบรีฟเรียบร้อยค่ะ ✨");
+    alert("คัดลอกบรีฟเรียบร้อยค่ะ กรอกแล้วส่งบรีฟได้เลยนะคะ ✨");
 }
 window.onload = createEmojis;
 </script>
