@@ -8,15 +8,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&display=swap');
 
         :root {
-            /* ปรับพื้นหลังให้ชมพูเข้มขึ้น และเอาสีฟ้าออกแล้วค๊า ✨ */
-            --bg-pink-dark: #f8bbd0; 
-            --bg-pink-mid: #fce4ec;
-            --bg-pink-light: #fff5f8;
-            --shop-pink: #ec407a; 
-            --status-pink: #f48fb1; 
-            --glass-white: rgba(255, 255, 255, 0.88);
+            /* ธีมชมพูเข้มแบบสะใจตามบรีฟเลยค๊า ✨ */
+            --bg-pink-dark: #f06292; 
+            --bg-pink-mid: #f48fb1;
+            --bg-pink-light: #f8bbd0;
+            --shop-pink: #ffffff; /* ชื่อร้านสีขาวออร่า */
+            --status-pink: #fff1f5; 
+            --glass-white: rgba(255, 255, 255, 0.9);
             --text-main: #5d5d5d; 
-            --accent-pink: #f06292;
+            --accent-pink: #ec407a;
             --soft-pink-box: #fff1f5;
             --soft-pink-border: #f8bbd0;
         }
@@ -24,7 +24,6 @@
         body {
             margin: 0; padding: 0;
             font-family: 'Mitr', sans-serif;
-            /* พื้นหลังชมพูไล่เฉดเข้มไปอ่อน ละมุนมากกก */
             background: linear-gradient(135deg, var(--bg-pink-dark), var(--bg-pink-mid), var(--bg-pink-light));
             background-attachment: fixed;
             display: flex; flex-direction: column; align-items: center;
@@ -48,40 +47,50 @@
             margin: 60px 10px; position: relative; z-index: 1;
         }
 
-        .profile-header { text-align: center; margin-bottom: 35px; }
+        .profile-header { text-align: center; margin-bottom: 25px; }
         
         .shop-name { 
-            font-size: 38px; 
+            font-size: 42px; 
             color: var(--shop-pink); 
             font-weight: 700; 
             margin: 0;
-            letter-spacing: 1.5px;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+            letter-spacing: 2px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .status-badge {
-            background: rgba(255, 255, 255, 0.4);
-            border: 2px dashed var(--status-pink); 
-            border-radius: 20px;
-            padding: 10px 20px; display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.5); 
+            border-radius: 30px;
+            padding: 8px 18px; display: inline-flex; align-items: center; gap: 8px;
             margin-top: 15px; font-size: 13px; 
-            color: var(--accent-pink);
-            font-weight: 500; line-height: 1.4;
+            color: #ffffff;
+            font-weight: 400; line-height: 1.4;
+            backdrop-filter: blur(5px);
         }
-        .dot { height: 8px; width: 8px; background: #fb8c00; border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
+        .dot { height: 8px; width: 8px; background: #fff; border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
         @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
+            0% { transform: scale(0.9); opacity: 0.6; }
             50% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
+            100% { transform: scale(0.9); opacity: 0.6; }
         }
+        .intro-text-white { 
+            text-align: center; 
+            font-size: 14.5px; 
+            line-height: 1.8; 
+            color: #ffffff; 
+            margin: 25px 0 35px 0;
+            padding: 0 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            font-weight: 300;
+        }
+
         .section-box {
             background: var(--glass-white); border-radius: 25px;
             padding: 25px; margin-bottom: 20px;
-            box-shadow: 0 4px 25px rgba(236, 64, 122, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
-
-        .intro-text { text-align: center; font-size: 14px; line-height: 1.8; color: var(--text-main); }
 
         .port-notice-box {
             background: #fff5f8; 
@@ -107,17 +116,15 @@
 <div id="emoji-container"></div>
 <div class="container">
     <div class="profile-header">
-        <h1 class="shop-name"> PINKJULIE JU </h1>
+        <h1 class="shop-name">PINKJULIE JU</h1>
         <div class="status-badge">
             <span class="dot"></span> 
-            <span>รับออเดอร์ปกติค่ะ สามารถทักสอบถามคิวได้เลยนะคะ ✨</span>
+            <span>รับออเดอร์ปกติค่ะ ทักสอบถามคิวได้เลยนะคะ ✨</span>
         </div>
     </div>
 
-    <div class="section-box">
-        <div class="intro-text">
-            เว็บโทนหวาน ๆ เรียบร้อย ดูละมุน เหมาะกับร้านที่อยากมีหน้าเว็บเป็นของตัวเองและไม่อยากทำเองค่ะ รวบรวมข้อมูลส่งมาเลยค่าเดี๋ยวจูจัดการให้ ครอบคลุมทุกการขาย🫧
-        </div>
+    <div class="intro-text-white">
+        เว็บโทนหวาน ๆ เรียบร้อย ดูละมุน เหมาะกับร้านที่อยากมีหน้าเว็บเป็นของตัวเองและไม่อยากทำเองค่ะ รวบรวมข้อมูลส่งมาเลยค่าเดี๋ยวจูจัดการให้ ครอบคลุมทุกการขาย🫧
     </div>
 
     <div class="section-box">
@@ -249,10 +256,10 @@
             8. ช่องทางติดต่อ/ลิงก์:
             9. หมายเหตุเพิ่มเติม:
         </div>
-        <button onclick="copyBrief()" style="width:100%; padding:15px; border-radius:35px; border:none; background: #f06292; color:white; font-family:'Mitr'; font-weight:600; cursor:pointer; margin-top:15px; font-size:14px; box-shadow: 0 5px 15px rgba(240, 98, 146, 0.2);">คัดลอกฟอร์มกรอกบรีฟเรียบร้อยค่ะ ✨</button>
+        <button onclick="copyBrief()" style="width:100%; padding:15px; border-radius:35px; border:none; background: #ec407a; color:white; font-family:'Mitr'; font-weight:600; cursor:pointer; margin-top:15px; font-size:14px; box-shadow: 0 5px 15px rgba(236, 64, 122, 0.3);">คัดลอกฟอร์มกรอกบรีฟเรียบร้อยค่ะ ✨</button>
     </div>
 
-    <div style="text-align:center; padding-bottom: 50px; font-size: 10px; opacity: 0.5; color: #ad1457; letter-spacing: 1px;">
+    <div style="text-align:center; padding-bottom: 50px; font-size: 10px; opacity: 0.8; color: #ffffff; letter-spacing: 1px;">
         PINKJULIE JU STUDIO
     </div>
 </div>
@@ -260,7 +267,7 @@
 <script>
 function createEmojis() {
     const container = document.getElementById('emoji-container');
-    const icons = ['✨', '🎀', '🤍', '💖', '🌸', '🫧'];
+    const icons = ['✨', '🎀', '🤍', '💖', '🌸', '🍭', '🫧'];
     setInterval(() => {
         const e = document.createElement('div');
         e.className = 'emoji-fly';
