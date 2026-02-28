@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pinkjulie - รับทำเว็บร้านครอบคลุมทุกรูปแบบ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>pinkjulieju 🫧</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pastel-blue: #D6EAF8;
-            --soft-blue: #AED6F1;
-            --deep-blue: #5DADE2;
-            --white: #FFFFFF;
-            --text-color: #566E7A;
-            --card-shadow: 0 10px 30px rgba(174, 214, 241, 0.3);
+            --primary-soft: #e0f2ff;
+            --primary-main: #b3d9ff;
+            --primary-dark: #4a90e2;
+            --accent-pink: #ffcce0;
+            --accent-purple: #e0ccff;
+            --text-color: #5a7d9a;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #b3d9ff 0%, #ffcce0 100%);
+            --shadow: 0 8px 20px rgba(179, 217, 255, 0.3);
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Mitr', sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: var(--pastel-blue);
+            background-color: var(--primary-soft);
             color: var(--text-color);
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
             line-height: 1.6;
+            overflow-x: hidden;
+            padding: 20px 15px;
         }
 
-        /* --- Background Floating Emojis --- */
-        .bg-floating-emojis {
+        /* Floating Emoji Background */
+        .floating-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -41,339 +45,395 @@
             height: 100%;
             pointer-events: none;
             z-index: -1;
-            overflow: hidden;
         }
 
-        .floating-item {
+        .floating-emoji {
             position: absolute;
             font-size: 24px;
-            opacity: 0.5;
-            animation: floatSlow 15s linear infinite;
+            opacity: 0.4;
+            animation: float 15s linear infinite;
         }
 
-        @keyframes floatSlow {
+        @keyframes float {
             0% { transform: translateY(110vh) rotate(0deg); }
             100% { transform: translateY(-10vh) rotate(360deg); }
         }
 
-        /* --- Layout --- */
-        .wrapper {
+        .container {
             max-width: 500px;
             margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
         }
 
-        /* --- Header Section --- */
-        .header {
+        /* 1️⃣ Hero Section */
+        .hero-section {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
 
-        .logo-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .logo-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .logo-wrapper {
             width: 130px;
             height: 130px;
-            background: rgba(255, 255, 255, 0.9);
-            filter: blur(20px);
+            margin: 0 auto 15px;
             border-radius: 50%;
-            z-index: 1;
+            border: 6px solid var(--white);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            background: var(--white);
         }
 
-        .logo-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 4px solid var(--white);
-            position: relative;
-            z-index: 3;
+        .logo-wrapper img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .logo-emoji-decor {
-            position: absolute;
-            font-size: 22px;
-            z-index: 4;
-            animation: upDown 3s ease-in-out infinite;
-        }
-
-        @keyframes upDown {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
         }
 
         .shop-name {
-            font-size: 28px;
-            font-weight: 600;
-            color: #4A90E2;
-            letter-spacing: 1px;
-        }
-
-        .tagline {
-            font-size: 14px;
-            font-weight: 300;
-            color: #7FB3D5;
-            margin-top: 5px;
-        }
-
-        /* --- Card Styles --- */
-        .card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            padding: 30px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: var(--card-shadow);
-        }
-
-        .section-title {
-            font-size: 19px;
+            font-size: 24px;
             font-weight: 500;
-            color: #5DADE2;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .welcome-msg {
+            font-size: 14px;
+            background: var(--white);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .banner-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-top: 15px;
+        }
+
+        /* 2️⃣ Status Banner */
+        .status-banner {
+            border: 2px dashed var(--accent-pink);
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            padding: 10px;
+            text-align: center;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
+            font-size: 14px;
         }
 
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, #AED6F1, transparent);
+        .status-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .open { background-color: #7ed321; }
+        .full { background-color: #f5a623; }
+        .close { background-color: #d0021b; }
+        .update { background-color: #9013fe; }
+
+        /* 3️⃣ กล่องหมายเหตุสำคัญ & การ์ดทั่วไป */
+        .card-white {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
         }
 
-        /* --- Pricing List --- */
-        .price-list {
-            list-style: none;
+        .note-box {
+            background-color: #fffaf2;
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 10px;
         }
 
-        .price-item {
-            margin-bottom: 12px;
-            font-size: 15px;
+        .note-title {
+            font-weight: 500;
+            margin-bottom: 10px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .note-grid {
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 10px;
         }
 
-        .bullet {
-            color: #AED6F1;
-            font-weight: bold;
-        }
-
-        .price-detail {
-            color: #7B9FB3;
+        .note-item {
             font-size: 13px;
-            display: block;
-            margin-top: 2px;
+            background: var(--white);
+            padding: 10px;
+            border-radius: 10px;
         }
 
-        /* --- Step List --- */
+        /* 4️⃣ กล่องระยะเวลาดำเนินการ */
+        .duration-card {
+            background: var(--gradient);
+            border-radius: 20px;
+            padding: 20px;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .duration-main { font-size: 18px; font-weight: 500; }
+        .duration-sub { font-size: 13px; opacity: 0.9; margin-top: 5px; }
+
+        /* 5️⃣ ขั้นตอนการสั่งซื้อ */
         .step-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
+            margin-top: 15px;
         }
 
-        .step-row {
+        .step-item {
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 12px 20px;
-            border-radius: 20px;
-            font-size: 15px;
+            gap: 15px;
         }
 
         .step-num {
-            width: 25px;
-            height: 25px;
-            background: var(--soft-blue);
-            color: white;
+            min-width: 35px;
+            height: 35px;
+            background: var(--accent-pink);
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 13px;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        /* --- Contact Buttons --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
+        .step-text { font-size: 14px; }
 
-        .contact-btn {
+        /* 6️⃣ ช่องทางติดต่อ & 7️⃣ ปุ่มใหญ่ */
+        .btn-large {
+            background: var(--gradient);
+            color: var(--white);
             text-decoration: none;
-            padding: 12px;
-            border-radius: 18px;
+            display: block;
             text-align: center;
-            font-size: 14px;
-            color: white;
-            transition: transform 0.2s;
+            padding: 15px;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .social-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 12px 20px;
+            margin-bottom: 10px;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        /* 8️⃣ วงรีลิงก์ด้านล่าง */
+        .footer-links {
+            display: flex;
             justify-content: center;
-        }
-
-        .contact-btn:active {
-            transform: scale(0.95);
-        }
-
-        .btn-line { background: #06C755; }
-        .btn-fb { background: #1877F2; }
-
-        .btn-label {
-            font-size: 11px;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        /* --- Footer --- */
-        .footer {
-            text-align: center;
-            font-size: 11px;
-            color: #A9CCE3;
+            gap: 10px;
             margin-top: 20px;
-            padding-bottom: 20px;
         }
 
-        .highlight-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(214, 234, 248, 0.5));
-            text-align: center;
+        .oval-btn {
+            border: 1.5px solid var(--accent-pink);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            background: var(--white);
         }
+
+        /* Portfolio / Price Section */
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--primary-soft);
+            font-size: 14px;
+        }
+
+        /* Copy Form Section */
+        .copy-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-copy {
+            background: var(--white);
+            border: 2px solid var(--primary-main);
+            padding: 8px 20px;
+            border-radius: 20px;
+            color: var(--primary-dark);
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Popup Notification */
+        #popup {
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            padding: 15px 25px;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: top 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            text-align: center;
+            width: 80%;
+            max-width: 300px;
+            font-size: 14px;
+            border: 2px solid var(--accent-pink);
+        }
+
+        #popup.show { top: 20px; }
+
     </style>
 </head>
 <body>
 
-    <div class="bg-floating-emojis" id="emojiBg"></div>
+    <div id="popup">คัดลอกแบบฟอร์มแล้วค่ะ 🫧✨<br>นำไปกรอกข้อมูลแล้วส่งมาได้เลยนะคะ 💗</div>
 
-    <div class="wrapper">
-        <header class="header">
-            <div class="logo-container">
-                <div class="logo-glow"></div>
-                <span class="logo-emoji-decor" style="top: -10px; left: -20px; animation-delay: 0s;">🧵</span>
-                <span class="logo-emoji-decor" style="bottom: 0px; right: -20px; animation-delay: 0.5s;">🪼</span>
-                <img src="Logo.jpeg" alt="Logo" class="logo-img">
+    <div class="floating-container" id="floating-bg"></div>
+
+    <div class="container">
+        
+        <section class="hero-section">
+            <div class="logo-wrapper">
+                <img src="Logo.jpeg" alt="Logo">
             </div>
-            <h1 class="shop-name">pinkjulie</h1>
-            <p class="tagline">รับทำเว็บร้านครอบคลุมทุกรูปแบบ</p>
-        </header>
+            <h1 class="shop-name">pinkjulieju</h1>
+            <div class="welcome-msg">ยินดีต้อนรับสู่ร้านของจูนะคะ 💕<br>ยินดีดูแลทุกคนอย่างเต็มที่ค่ะ</div>
+            <p style="font-size: 13px;">🫧 รับออกแบบเว็บร้านสไตล์พิ้งจู<br>ดีไซน์หวานละมุน ครอบคลุมทุกการขาย 💧</p>
+            <img src="banner1.jpg" alt="Banner" class="banner-img">
+        </section>
 
-        <div class="card highlight-card">
-            <h2 class="section-title" style="justify-content: center;">รับออกแบบเว็บร้าน</h2>
-            <p style="font-size: 14px; color: #5DADE2;">ยินดีให้บริการปรึกษาและออกแบบเว็บร้านค้า<br>สไตล์พาสเทล มินิมอล หรูหรา</p>
+        <div class="status-banner">
+            <div class="status-dot open"></div>
+            <span>เปิดรับคิวอยู่นะคะ ทักสอบถามคิวได้เลยค่ะ 💬✨</span>
         </div>
 
-        <div class="card">
-            <h2 class="section-title">🖇️ รายละเอียดการสั่งทำ</h2>
-            <p style="font-size: 14px; margin-bottom: 15px; color: #5DADE2; font-weight: 500;">เว็บร้าน สไตล์พิ้งจู 🎀</p>
-            <ul class="price-list">
-                <li class="price-item">
-                    <span class="bullet">•</span>
-                    <div>ใส่โลโก้อย่างเดียว ราคา 109.-<span class="price-detail">รายละเอียดไม่เกิน 200 lines กรณีเกิน +19</span></div>
-                </li>
-                <li class="price-item">
-                    <span class="bullet">•</span>
-                    <div>ใส่รูปแบนเนอร์ 1–2 รูป เพิ่ม +29.-</div>
-                </li>
-                <li class="price-item">
-                    <span class="bullet">•</span>
-                    <div>แก้ไขข้อมูลหลังส่งงานให้ตรวจสอบ ฟรี 1 ครั้ง</div>
-                </li>
-                <li class="price-item">
-                    <span class="bullet">•</span>
-                    <div>หลังส่งลิงก์แล้ว หากมีการแก้ไขเพิ่มเติม คิดจุดละ 5.-</div>
-                </li>
-                <li class="price-item">
-                    <span class="bullet">•</span>
-                    <div>รายละเอียดเกิน 200 lines เริ่มที่ 119.-</div>
-                </li>
-                <li class="price-item">
-                    <span class="bullet">•</span>
-                    <div>รายละเอียดเกิน 400 lines เริ่มที่ 129.-</div>
-                </li>
-                <li class="price-item">
-                    <span class="bullet">•</span>
-                    <div>รายละเอียดเกิน 600 lines เริ่มที่ 149.-</div>
-                </li>
-            </ul>
+        <div class="copy-section">
+            <button class="btn-copy" onclick="copyForm()">📋 คัดลอกแบบฟอร์ม</button>
         </div>
 
-        <div class="card">
-            <h2 class="section-title">📌 เงื่อนไขการจองคิว</h2>
-            <ul class="price-list">
-                <li class="price-item"><span class="bullet">•</span> จองคิวพร้อมบรีฟเท่านั้นนะคะ</li>
-                <li class="price-item"><span class="bullet">•</span> ส่งบรีฟ = โอนมัดจำ</li>
-            </ul>
+        <div class="card-white">
+            <div class="note-title">📦 หมวดหมู่ที่รับทำ</div>
+            <div style="font-size: 14px; margin-bottom: 15px;">
+                • เว็บร้านสไตล์พิ้งจู 🎀<br>
+                • เว็บขายฟอนต์ / สติกเกอร์ / แอพพรีเมียม 💗<br>
+                • เว็บร้านออนไลน์ทุกประเภท 🛍️
+            </div>
+            <div class="note-title">💰 อัตราค่าบริการ</div>
+            <div class="price-item"><span>ใส่โลโก้อย่างเดียว</span> <span>109.-</span></div>
+            <div class="price-item"><span>รายละเอียดไม่เกิน 200 lines</span> <span>ราคาปกติ</span></div>
+            <div class="price-item"><span>เกินจากนี้</span> <span>+19.-</span></div>
         </div>
 
-        <div class="card">
-            <h2 class="section-title">ขั้นตอนการสั่งซื้อ</h2>
+        <div class="duration-card">
+            <div class="duration-main">⏱ ใช้เวลาทำ 1–3 วัน</div>
+            <div class="duration-sub">มีคิว 1–7 วัน โดยส่วนมากไม่เกิน 1–2 วันค่ะ</div>
+        </div>
+
+        <div class="card-white">
+            <div class="note-title">🎀 วิธีการสั่งทำเว็บกับจู</div>
+            <img src="banner1.jpg" alt="Order Steps" class="banner-img" style="margin-top: 10px; margin-bottom: 20px;">
             <div class="step-container">
-                <div class="step-row"><span class="step-num">1</span> กรอกฟอร์ม</div>
-                <div class="step-row"><span class="step-num">2</span> ส่งโลโก้/รายละเอียด</div>
-                <div class="step-row"><span class="step-num">3</span> โอนมัดจำ</div>
-                <div class="step-row"><span class="step-num">4</span> ตรวจงาน</div>
-                <div class="step-row"><span class="step-num">5</span> รับลิงก์</div>
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-text">ทักแชทแจ้งความต้องการสไตล์ที่ชอบ</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-text">ส่งข้อมูลตามแบบฟอร์มของทางร้าน</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-text">จองคิวและชำระเงินตามยอดสรุป</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-text">รอรับตัวอย่างงานเพื่อตรวจสอบ</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">5</div>
+                    <div class="step-text">ส่งมอบไฟล์งานพร้อมใช้งาน 🎉</div>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <h2 class="section-title">ติดต่อสอบถาม</h2>
-            <div class="contact-grid">
-                <a href="https://line.me/ti/p/~@298djtan" class="contact-btn btn-line">
-                    <span class="btn-label">LINE Official</span>
-                    @298djtan
-                </a>
-                <a href="https://www.facebook.com/pinkjulie.ju" class="contact-btn btn-fb">
-                    <span class="btn-label">Facebook</span>
-                    pinkjulie ju
-                </a>
+        <div class="card-white">
+            <div class="note-box">
+                <div class="note-title">📌 หมายเหตุสำคัญ</div>
+                <div class="note-grid">
+                    <div class="note-item">📩 แก้ไขฟรี 1 รอบหลังส่งแบบนะคะ</div>
+                    <div class="note-item">📦 การปรับโครงสร้างหลังส่งงานมีค่าบริการเพิ่มเติมค่ะ</div>
+                </div>
             </div>
         </div>
 
-        <footer class="footer">
-            &copy; 2026 pinkjulie Design. All Rights Reserved.
-        </footer>
+        <a href="https://lin.ee/cDgYXQx" class="btn-large">สั่งทำเว็บผ่าน LINE 🫧</a>
+
+        <a href="https://www.facebook.com/profile.php?id=61554192600355" class="social-card">
+            <span>Facebook Page</span>
+            <span>➜</span>
+        </a>
+        <a href="https://lin.ee/cDgYXQx" class="social-card">
+            <span>Official LINE</span>
+            <span>➜</span>
+        </a>
+
+        <div class="footer-links">
+            <a href="https://www.facebook.com/profile.php?id=61554192600355" class="oval-btn">Facebook</a>
+            <a href="#" class="oval-btn">Instagram</a>
+            <a href="https://lin.ee/cDgYXQx" class="oval-btn">LINE</a>
+        </div>
+
+        <p style="text-align: center; font-size: 10px; margin-top: 30px; opacity: 0.5;">© pinkjulieju | All Rights Reserved</p>
+
     </div>
 
     <script>
-        const emojis = ['🧵', '💧', '🪼'];
-        const bg = document.getElementById('emojiBg');
-
+        // Floating Background
+        const emojis = ['🫧', '💙', '⭐', '🌈', '🪐', '☁️', '💫'];
+        const container = id => document.getElementById(id);
+        
         function createEmoji() {
             const emoji = document.createElement('div');
-            emoji.className = 'floating-item';
-            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.className = 'floating-emoji';
+            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
             emoji.style.left = Math.random() * 100 + 'vw';
-            emoji.style.top = '110vh';
-            emoji.style.animationDuration = (Math.random() * 10 + 15) + 's';
-            emoji.style.fontSize = (Math.random() * 15 + 15) + 'px';
-            bg.appendChild(emoji);
-
-            setTimeout(() => {
-                emoji.remove();
-            }, 25000);
+            emoji.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            emoji.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            container('floating-bg').appendChild(emoji);
+            
+            setTimeout(() => { emoji.remove(); }, 15000);
         }
+        setInterval(createEmoji, 1500);
 
-        setInterval(createEmoji, 3000);
-        for(let i=0; i<10; i++) {
-            setTimeout(createEmoji, Math.random() * 5000);
+        // Copy Form Function
+        function copyForm() {
+            const formText = `แบบฟอร์มกรอกข้อมูลร้านจู🫧\n\nชื่อร้าน:\n→\n\nคำอธิบายร้าน (สั้น 1–3 บรรทัด):\n→\n\nโทนสีที่ชอบ (ระบุสีหลัก / แนบรูปตัวอย่างได้):\n→\n\nอิโมจิ / ธีมที่อยากให้ใช้ในเว็บ:\n→\n\nมีโลโก้หรือไม่:\n(ถ้ามี ใช้ไฟล์ชื่อ Logo.jpeg เท่านั้น)\n\nมีแบนเนอร์หรือไม่:\n(ถ้ามี ใช้ banner1.jpg – banner4.jpg)\n\n🟢 สถานะร้าน\nเลือก 1 อย่าง: open / full / close / update\nข้อความสถานะ:\n→\n\n📦 หมวดหมู่สินค้า\n→\n→\n→\n\n💰 ราคา\n→\n→\n→\n\n⏱ ระยะเวลาดำเนินการ\nหัวข้อหลัก:\n→\nข้อความรองด้านล่าง:\n→`;
+            
+            navigator.clipboard.writeText(formText).then(() => {
+                const popup = container('popup');
+                popup.classList.add('show');
+                setTimeout(() => { popup.classList.remove('show'); }, 3000);
+            });
         }
     </script>
 </body>
