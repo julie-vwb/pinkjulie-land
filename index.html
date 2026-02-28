@@ -1,442 +1,253 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pinkjulieju 🫧</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-soft: #e0f2ff;
-            --primary-main: #b3d9ff;
-            --primary-dark: #4a90e2;
-            --accent-pink: #ffcce0;
-            --accent-purple: #e0ccff;
-            --text-color: #5a7d9a;
-            --white: #ffffff;
-            --gradient: linear-gradient(135deg, #b3d9ff 0%, #ffcce0 100%);
-            --shadow: 0 8px 20px rgba(179, 217, 255, 0.3);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pinkjulieland 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink1: #FCE4EC;
+    --pink2: #F8BBD0;
+    --pink3: #F06292;
+    --pink4: #E91E63;
+    --bg-grad: linear-gradient(160deg, #FCE4EC 0%, #FFFFFF 50%, #F8BBD0 100%);
+    --white: rgba(255, 255, 255, 0.9);
+    --text: #4A148C;
+    --textl: #880E4F;
+  }
+  
+  * { margin:0; padding:0; box-sizing:border-box; }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Mitr', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
+  body {
+    font-family: 'Mitr', sans-serif;
+    background: var(--bg-grad);
+    min-height: 100vh;
+    color: var(--text);
+    overflow-x: hidden;
+  }
 
-        body {
-            background-color: var(--primary-soft);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-            padding: 20px 15px;
-        }
+  .sp { position:fixed; pointer-events:none; z-index:0; animation:fl 5s ease-in-out infinite; opacity:0.5; color: var(--pink3); }
+  .sp:nth-child(1){top:4%;left:5%;font-size:22px;}
+  .sp:nth-child(2){top:12%;right:8%;font-size:14px;animation-delay:1s;}
+  .sp:nth-child(3){top:38%;left:2%;font-size:12px;animation-delay:2s;}
+  .sp:nth-child(4){top:55%;right:4%;font-size:20px;animation-delay:.5s;}
+  @keyframes fl {0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-14px) rotate(8deg);}}
 
-        /* Floating Emoji Background */
-        .floating-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
+  .wrap { max-width:480px; margin:0 auto; padding:16px 14px 60px; position:relative; z-index:1; }
 
-        .floating-emoji {
-            position: absolute;
-            font-size: 24px;
-            opacity: 0.4;
-            animation: float 15s linear infinite;
-        }
+  .header { text-align:center; padding:35px 0 20px; animation:fadeUp .7s ease both; }
 
-        @keyframes float {
-            0% { transform: translateY(110vh) rotate(0deg); }
-            100% { transform: translateY(-10vh) rotate(360deg); }
-        }
+  .logo-wrapper {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo-img {
+    width: 150px; height: 150px;
+    object-fit: cover; border-radius: 50%;
+    border: 5px solid #fff; box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
+  }
 
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
+  .shop-name { font-size:2.2rem; font-weight:700; color: var(--pink4); text-shadow: 2px 2px 4px rgba(0,0,0,0.05); }
+  .shop-sub { font-size:.9rem; color:var(--textl); margin-top:8px; opacity: 0.8; }
 
-        /* 1️⃣ Hero Section */
-        .hero-section {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+  .status-bar {
+    margin: 20px auto; padding: 10px; width: 90%;
+    border: 2px dashed var(--pink3); border-radius: 15px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: rgba(255, 255, 255, 0.6); font-weight: 500;
+  }
+  .status-dot {
+    width: 10px; height: 10px; background-color: #4CAF50;
+    border-radius: 50%; box-shadow: 0 0 8px #4CAF50; animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
-        .logo-wrapper {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            border: 6px solid var(--white);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            background: var(--white);
-        }
+  .banner-img { width: 100%; border-radius: 18px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        .logo-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+  .card {
+    background: var(--white); backdrop-filter:blur(10px);
+    border-radius:22px; padding:20px; margin-bottom:14px;
+    box-shadow:0 4px 15px rgba(233, 30, 99, 0.05);
+    animation:fadeUp .6s ease both;
+  }
 
-        .shop-name {
-            font-size: 24px;
-            font-weight: 500;
-            color: var(--primary-dark);
-            margin-bottom: 5px;
-        }
+  .ct { font-size:1rem; font-weight:600; color:var(--pink4); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
 
-        .welcome-msg {
-            font-size: 14px;
-            background: var(--white);
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+  .price-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; border-bottom: 1px dashed var(--pink2);
+  }
+  .price-tag {
+    background: var(--pink1); color: var(--pink4);
+    padding: 4px 12px; border-radius: 15px; font-weight: 600; font-size: 0.85rem;
+  }
 
-        .banner-img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            margin-top: 15px;
-        }
+  .step-item { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
+  .step-num {
+    width: 24px; height: 24px; background: var(--pink3); color: #fff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; flex-shrink: 0;
+  }
 
-        /* 2️⃣ Status Banner */
-        .status-banner {
-            border: 2px dashed var(--accent-pink);
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 15px;
-            padding: 10px;
-            text-align: center;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 14px;
-        }
+  .lnk {
+    display:flex; align-items:center; gap:10px;
+    background: #fff; border:1px solid var(--pink1); border-radius:14px;
+    padding:12px; text-decoration:none; color:var(--text);
+    font-size:.85rem; margin-bottom:8px; transition: 0.3s;
+  }
+  .lnk:hover { transform: scale(1.02); border-color: var(--pink3); }
 
-        .status-dot { width: 10px; height: 10px; border-radius: 50%; }
-        .open { background-color: #7ed321; }
-        .full { background-color: #f5a623; }
-        .close { background-color: #d0021b; }
-        .update { background-color: #9013fe; }
+  .copy-area { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+  .btn-copy {
+    background: var(--pink3); color: white; border: none; padding: 12px;
+    border-radius: 12px; cursor: pointer; font-family: 'Mitr'; font-size: 0.9rem;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: 0.3s;
+  }
+  .btn-copy:active { transform: scale(0.95); }
 
-        /* 3️⃣ กล่องหมายเหตุสำคัญ & การ์ดทั่วไป */
-        .card-white {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            margin-bottom: 20px;
-        }
+  #toast {
+    visibility: hidden; min-width: 200px; background-color: #333; color: #fff;
+    text-align: center; border-radius: 50px; padding: 12px;
+    position: fixed; z-index: 1000; left: 50%; bottom: 30px;
+    transform: translateX(-50%); font-size: 0.85rem;
+  }
+  #toast.show { visibility: visible; animation: fadeInOut 2s; }
 
-        .note-box {
-            background-color: #fffaf2;
-            border-radius: 15px;
-            padding: 15px;
-            margin-top: 10px;
-        }
+  @keyframes fadeInOut {
+    0% { bottom: 0; opacity: 0; }
+    20% { bottom: 30px; opacity: 1; }
+    80% { bottom: 30px; opacity: 1; }
+    100% { bottom: 0; opacity: 0; }
+  }
 
-        .note-title {
-            font-weight: 500;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+  .cta-btn {
+    display:block; width:100%; text-align:center;
+    background: linear-gradient(135deg, var(--pink3), var(--pink4));
+    color:#fff; padding:15px; border-radius:50px; text-decoration:none;
+    font-weight:600; box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3); margin-top: 20px;
+  }
 
-        .note-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
+  .pill-links {
+    display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 20px;
+  }
+  .pill {
+    padding: 6px 18px; border-radius: 20px; background: #fff;
+    border: 1px solid var(--pink2); color: var(--pink4);
+    text-decoration: none; font-size: 0.75rem; font-weight: 500;
+  }
 
-        .note-item {
-            font-size: 13px;
-            background: var(--white);
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        /* 4️⃣ กล่องระยะเวลาดำเนินการ */
-        .duration-card {
-            background: var(--gradient);
-            border-radius: 20px;
-            padding: 20px;
-            color: var(--white);
-            text-align: center;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .duration-main { font-size: 18px; font-weight: 500; }
-        .duration-sub { font-size: 13px; opacity: 0.9; margin-top: 5px; }
-
-        /* 5️⃣ ขั้นตอนการสั่งซื้อ */
-        .step-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .step-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .step-num {
-            min-width: 35px;
-            height: 35px;
-            background: var(--accent-pink);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-        }
-
-        .step-text { font-size: 14px; }
-
-        /* 6️⃣ ช่องทางติดต่อ & 7️⃣ ปุ่มใหญ่ */
-        .btn-large {
-            background: var(--gradient);
-            color: var(--white);
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            padding: 15px;
-            border-radius: 30px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .social-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 12px 20px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-        }
-
-        /* 8️⃣ วงรีลิงก์ด้านล่าง */
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .oval-btn {
-            border: 1.5px solid var(--accent-pink);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            text-decoration: none;
-            color: var(--text-color);
-            background: var(--white);
-        }
-
-        /* Portfolio / Price Section */
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--primary-soft);
-            font-size: 14px;
-        }
-
-        /* Copy Form Section */
-        .copy-section {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .btn-copy {
-            background: var(--white);
-            border: 2px solid var(--primary-main);
-            padding: 8px 20px;
-            border-radius: 20px;
-            color: var(--primary-dark);
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        /* Popup Notification */
-        #popup {
-            position: fixed;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--white);
-            padding: 15px 25px;
-            border-radius: 25px;
-            box-shadow: var(--shadow);
-            z-index: 1000;
-            transition: top 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-            text-align: center;
-            width: 80%;
-            max-width: 300px;
-            font-size: 14px;
-            border: 2px solid var(--accent-pink);
-        }
-
-        #popup.show { top: 20px; }
-
-    </style>
+  .footer { text-align:center; padding:30px 0; font-size:.75rem; color:var(--textl); line-height: 1.6; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(15px);} to{opacity:1;transform:translateY(0);} }
+</style>
 </head>
 <body>
+<div class="sp">🌸</div><div class="sp">🎀</div><div class="sp">✨</div><div class="sp">💖</div>
 
-    <div id="popup">คัดลอกแบบฟอร์มแล้วค่ะ 🫧✨<br>นำไปกรอกข้อมูลแล้วส่งมาได้เลยนะคะ 💗</div>
+<div class="wrap">
+  <div class="header">
+    <div class="logo-wrapper"><img src="ไม่มีชื่อ 48_20260228233434.png" alt="Logo" class="logo-img"></div>
+    <div class="shop-name">pinkjulieland</div>
+    <div class="shop-sub">ยินดีต้อนรับเข้าสู่โลกของจู</div>
+  </div>
 
-    <div class="floating-container" id="floating-bg"></div>
+  <div class="status-bar"><div class="status-dot"></div>เปิดรับคิวอยู่นะคะ</div>
 
-    <div class="container">
-        
-        <section class="hero-section">
-            <div class="logo-wrapper">
-                <img src="logo.jpg" alt="Logo">
-            </div>
-            <h1 class="shop-name">pinkjulieju</h1>
-            <div class="welcome-msg">ยินดีต้อนรับสู่ร้านของจูนะคะ 💕<br>ยินดีดูแลทุกคนอย่างเต็มที่ค่ะ</div>
-            
-            <div class="status-banner" style="margin-top: 15px;">
-                <div class="status-dot open"></div>
-                <span>เปิดรับคิวอยู่นะคะ ทักสอบถามคิวได้เลยค่ะ 💬✨</span>
-            </div>
+  <img src="ไม่มีชื่อ 48_20260228114021.png" alt="Banner" class="banner-img">
 
-            <p style="font-size: 13px; margin-top: 15px;">🫧 รับออกแบบเว็บร้านสไตล์พิ้งจู<br>ดีไซน์หวานละมุน ครอบคลุมทุกการขาย 💧</p>
-        </section>
+  <div class="card">
+    <div class="ct">📦 หมวดหมู่สินค้า</div>
+    <div class="lnk">✨ รับสร้างเว็บร้านขายแอพพรีเมียม | สตกไลน์ ธีมไลน์</div>
+    <div class="lnk">🎮 รับสร้างเว็บร้านขายแอพเกมส์ | รับเติมเกมส์</div>
+    <div class="lnk">🎨 รับสร้างเว็บขาย กลุ่ม | รับออกแบบป้าย</div>
+    <div class="lnk">🌐 รับสร้างเว็บครอบคลุมทุกประเภทสอบถามเพิ่มเติมได้ค่ะ</div>
+  </div>
 
-        <div class="card-white">
-            <div class="note-title">📦 หมวดหมู่ที่รับทำ</div>
-            <div style="font-size: 14px; margin-bottom: 15px;">
-                • เว็บร้านสไตล์พิ้งจู 🎀<br>
-                • เว็บขายฟอนต์ / สติกเกอร / แอพเกมส์ 💗<br>
-                • เว็บร้านออนไลน์ทุกประเภท 🛍️
-            </div>
-            <div class="note-title">💰 อัตราค่าบริการ</div>
-            <div class="price-item"><span>ใส่โลโก้อย่างเดียว</span> <span>109.-</span></div>
-            <div class="price-item"><span>รายละเอียดไม่เกิน 200 lines</span> <span>ราคาปกติ</span></div>
-            <div class="price-item"><span>เกินจากนี้</span> <span>+19.-</span></div>
-        </div>
+  <div class="card">
+    <div class="ct">🌸 ตัวอย่างงาน</div>
+    <a href="https://julie-vwb.github.io/erin-shop/" class="lnk" target="_blank">🔗 Erin Shop</a>
+    <a href="https://julie-vwb.github.io/mahatep-shop/" class="lnk" target="_blank">🔗 Mahatep Shop</a>
+    <a href="https://julie-vwb.github.io/cxllmestore-shop/" class="lnk" target="_blank">🔗 Cxllmestore Shop</a>
+    <a href="https://julie-vwb.github.io/cooper-shop/" class="lnk" target="_blank">🔗 Cooper Shop</a>
+    <a href="https://julie-vwb.github.io/babybear-design/" class="lnk" target="_blank">🔗 Babybear Design</a>
+    <a href="https://julie-vwb.github.io/tanewcutie-design/" class="lnk" target="_blank">🔗 Tanewcutie Design</a>
+    <a href="https://julie-vwb.github.io/meow-font/" class="lnk" target="_blank">🔗 Meow Font</a>
+    <a href="https://julie-vwb.github.io/waray-design/" class="lnk" target="_blank">🔗 Waray Design</a>
+    <a href="https://julie-vwb.github.io/luna-webstudio/" class="lnk" target="_blank">🔗 Luna Webstudio</a>
+  </div>
 
-        <div class="duration-card">
-            <div class="duration-main">⏱ ใช้เวลาทำ 1–3 วัน</div>
-            <div class="duration-sub">มีคิว 1–7 วัน โดยส่วนมากไม่เกิน 1–2 วันค่ะ</div>
-        </div>
+  <div class="card">
+    <div class="ct">💰 รายละเอียดราคา</div>
+    <div class="price-item"><span>เริ่มต้น (โลโก้ + ข้อมูล < 200 lines)</span><span class="price-tag">109 ฿</span></div>
+    <div class="price-item"><span>มีโลโก้ + ข้อมูล > 400 lines</span><span class="price-tag">129 ฿</span></div>
+    <div class="price-item"><span>มีโลโก้ + ข้อมูล > 600 lines</span><span class="price-tag">149 ฿</span></div>
+    <div class="price-item"><span>มีโลโก้ + ข้อมูล > 800 lines</span><span class="price-tag">169 ฿</span></div>
+  </div>
 
-        <div class="card-white">
-            <div class="note-title">🎀 วิธีการสั่งทำเว็บกับจู</div>
-            <img src="banner1.jpg" alt="Order Steps Banner" class="banner-img" style="margin-top: 10px; margin-bottom: 20px;">
-            
-            <div class="step-container">
-                <div class="step-item">
-                    <div class="step-num">1</div>
-                    <div class="step-text">ทักแชทแจ้งความต้องการสไตล์ที่ชอบ</div>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">2</div>
-                    <div class="step-text">ส่งข้อมูลตามแบบฟอร์มของทางร้าน</div>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">3</div>
-                    <div class="step-text">จองคิวและชำระเงินตามยอดสรุป</div>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">4</div>
-                    <div class="step-text">รอรับตัวอย่างงานเพื่อตรวจสอบ</div>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">5</div>
-                    <div class="step-text">ส่งมอบไฟล์งานพร้อมใช้งาน 🎉</div>
-                </div>
-            </div>
+  <div class="card">
+    <div class="ct">📝 ขั้นตอนการสั่งซื้อ</div>
+    <div class="step-item"><div class="step-num">1</div><div class="step-text">ทักแชท</div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-text">เลือกแบบฟอร์มที่ตรงกับประเภทร้าน</div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-text">คัดลอกแบบฟอร์มแล้วกรอกข้อมูล</div></div>
+    <div class="step-item"><div class="step-num">4</div><div class="step-text">ส่งข้อมูลมาทางแชท รอเค้าสรุปยอด</div></div>
+    <div class="step-item"><div class="step-num">5</div><div class="step-text">รอรับงานได้เลยค่ะ</div></div>
+  </div>
 
-            <div class="copy-section">
-                <button class="btn-copy" onclick="copyForm()">📋 คัดลอกแบบฟอร์ม</button>
-            </div>
-        </div>
-
-        <div class="card-white">
-            <div class="note-box">
-                <div class="note-title">📌 หมายเหตุสำคัญ</div>
-                <div class="note-grid">
-                    <div class="note-item">📩 แก้ไขฟรี 1 รอบหลังส่งแบบนะคะ</div>
-                    <div class="note-item">📦 การปรับโครงสร้างหลังส่งงานมีค่าบริการเพิ่มเติมค่ะ</div>
-                </div>
-            </div>
-        </div>
-
-        <a href="https://lin.ee/cDgYXQx" class="btn-large">สั่งทำเว็บผ่าน LINE 🫧</a>
-
-        <a href="https://www.facebook.com/profile.php?id=61554192600355" class="social-card">
-            <span>Facebook Page</span>
-            <span>➜</span>
-        </a>
-        <a href="https://lin.ee/cDgYXQx" class="social-card">
-            <span>Official LINE</span>
-            <span>➜</span>
-        </a>
-
-        <div class="footer-links">
-            <a href="https://www.facebook.com/profile.php?id=61554192600355" class="oval-btn">Facebook</a>
-            <a href="#" class="oval-btn">Instagram</a>
-            <a href="https://lin.ee/cDgYXQx" class="oval-btn">LINE</a>
-        </div>
-
-        <p style="text-align: center; font-size: 10px; margin-top: 30px; opacity: 0.5;">© pinkjulieju | All Rights Reserved</p>
-
+  <div class="card">
+    <div class="ct">📨 แบบฟอร์มร้านจู (คลิกเพื่อคัดลอก)</div>
+    <div class="copy-area">
+      <button class="btn-copy" onclick="copyText(1)">🌟 แบบฟอร์มข้อมูลร้านทั่วไป</button>
+      <button class="btn-copy" onclick="copyText(2)">🌟 แบบฟอร์มร้านแอป / สติกเกอร์</button>
+      <button class="btn-copy" onclick="copyText(3)">🌟 แบบฟอร์มร้านขายป้าย</button>
     </div>
+  </div>
 
-    <script>
-        // Floating Background
-        const emojis = ['🫧', '💙', '⭐', '🌈', '🪐', '☁️', '💫'];
-        const container = id => document.getElementById(id);
-        
-        function createEmoji() {
-            const emoji = document.createElement('div');
-            emoji.className = 'floating-emoji';
-            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.left = Math.random() * 100 + 'vw';
-            emoji.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            emoji.style.fontSize = (Math.random() * 20 + 15) + 'px';
-            container('floating-bg').appendChild(emoji);
-            
-            setTimeout(() => { emoji.remove(); }, 15000);
-        }
-        setInterval(createEmoji, 1500);
+  <div class="card">
+    <div class="ct">⏱ ระยะเวลาดำเนินการ</div>
+    <div style="font-weight: 600; color: var(--pink4);">ไม่มีคิว 1-3 วัน | มีคิว 1-7 วันโดยประมาณ</div>
+    <div style="font-size: 0.8rem; margin-top: 5px;">โดยส่วนมากไม่เกิน 1-2 วันหลังจากสั่งค่ะ</div>
+  </div>
 
-        // Copy Form Function
-        function copyForm() {
-            const formText = `แบบฟอร์มกรอกข้อมูลร้านจู🫧\n\nชื่อร้าน:\n→\n\nคำอธิบายร้าน (สั้น 1–3 บรรทัด):\n→\n\nโทนสีที่ชอบ (ระบุสีหลัก / แนบรูปตัวอย่างได้):\n→\n\nอิโมจิ / ธีมที่อยากให้ใช้ในเว็บ:\n→\n\nมีโลโก้หรือไม่:\n(ถ้ามี ใช้ไฟล์ชื่อ Logo.jpeg เท่านั้น)\n\nมีแบนเนอร์หรือไม่:\n(ถ้ามี ใช้ banner1.jpg – banner4.jpg)\n\n🟢 สถานะร้าน\nเลือก 1 อย่าง: open / full / close / update\nข้อความสถานะ:\n→\n\n📦 หมวดหมู่สินค้า\n→\n→\n→\n\n💰 ราคา\n→\n→\n→\n\n⏱ ระยะเวลาดำเนินการ\nหัวข้อหลัก:\n→\nข้อความรองด้านล่าง:\n→`;
-            
-            navigator.clipboard.writeText(formText).then(() => {
-                const popup = container('popup');
-                popup.classList.add('show');
-                setTimeout(() => { popup.classList.remove('show'); }, 3000);
-            });
-        }
-    </script>
+  <a href="https://line.me/ti/p/@298djtan" class="cta-btn" target="_blank">💬 ติดต่อสอบถาม (@298djtan)</a>
+
+  <div class="pill-links">
+    <a href="https://www.facebook.com/share/1NJrRLL41c/?mibextid=wwXIfr" class="pill" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/pinkjulie.land?igsh=MWdpcGUycngyc21zbQ%3D%3D&utm_source=qr" class="pill" target="_blank">Instagram</a>
+    <a href="https://lin.ee/WLFjXLR" class="pill" target="_blank">LINE</a>
+  </div>
+
+  <div class="footer">
+    <div style="margin-bottom: 10px; font-weight: 600; color: var(--pink4);">📌 หมายเหตุสำคัญ</div>
+    <div>เริ่มงานหลังจากที่ได้รับบรีฟแล้วเท่านั้นนะคะ หากไม่ได้รับบรีฟ จะทำของลูกค้าที่แจ้งบรีฟก่อนค่ะ แจ้งทีหลังก็จะทำตามลำดับคิว ขออนุญาตยึดคิวลูกค้าที่ส่งบรีฟก่อนเป็นหลักค่ะ ตัวอย่างงานเป็นเพียงสไตล์งานเท่านั้น ไม่สามารถทำให้เหมือน 100% ได้ ขึ้นอยู่กับข้อมูลลูกค้าค่ะ</div>
+    <div style="margin-top: 20px; opacity: 0.6;">© 2026 pinkjulieland • ยินดีให้บริการค่ะ 💖</div>
+  </div>
+</div>
+
+<div id="toast">🖇️ คัดลอกเรียบร้อยแล้วค่ะ</div>
+
+<script>
+function copyText(id) {
+  let text = "";
+  if(id === 1) {
+    text = `แบบฟอร์มข้อมูลร้าน แจ้งรายละเอียดทั่วไป\n\nข้อมูลร้าน\nชื่อร้าน : pinkjulieland\nมีโลโก้ไหม : มี\nโทนสีเว็บ :\nข้อความต้อนรับ : ยินดีต้อนรับเข้าสู่โลกของจู\nร้านเราขายอะไร : รับสร้างเว็บร้านขายแอพพรีเมียม, เกมส์, ป้าย\nจุดเด่นร้าน :\nช่วงเวลาตอบแชท :\n\nระยะเวลาทำงาน\nปกติกี่นาที/ชั่วโมง :\nงานด่วนไหม :\nวันหยุดร้าน :\n\nขั้นตอนสั่งซื้อ\n1. ทักแชท\n2. เลือกแบบฟอร์ม\n3. คัดลอกและกรอกข้อมูล\n4. ส่งข้อมูลและรอสรุปยอด\n\nการชำระเงิน\nช่องทาง :\nต้องแจ้งสลิปไหม :\nค่าบริการเพิ่ม :\n\nการรับประกัน\nเคลมได้ไหม :\nเงื่อนไข :\n\nช่องทางติดต่อ\nLine : @298djtan\nลิงก์รีวิว :\nข้อความบนปุ่ม :`;
+  } else if(id === 2) {
+    text = `แบบฟอร์มทำเว็บไซต์ร้านแอปพรีเมี่ยม / สติกเกอร์\n\nข้อมูลพื้นฐาน\nชื่อร้าน : pinkjulieland\nไฟล์โลโก้ : ไม่มีชื่อ 48_20260228233434.png\nโทนสี :\nข้อความต้อนรับ : ยินดีต้อนรับเข้าสู่โลกของจู\nรายละเอียดร้าน : รับสร้างเว็บร้านขายแอพพรีเมียม\nหมวดหมู่หลัก :\nสถานะร้าน : เปิดรับคิวอยู่นะคะ\n\nขั้นตอนสั่งซื้อ\n1. ทักแชท\n2. เลือกแบบฟอร์ม\n3. กรอกข้อมูล\n4. รอรับงาน\nวิธีชำระเงิน :\n\nหมวดสินค้าแอป\nชื่อแอป :\nรูปแบบใช้งาน :\nราคา :\n\nช่องทางติดต่อ\nLine Official : @298djtan\nลิงก์รีวิว :\nข้อความบนปุ่ม :`;
+  } else if(id === 3) {
+    text = `แบบฟอร์มทำเว็บไซต์ร้านขายป้าย\n\nข้อมูลพื้นฐาน\nชื่อร้าน : pinkjulieland\nโทนสี :\nข้อความต้อนรับ : ยินดีต้อนรับเข้าสู่โลกของจู\nรายละเอียดร้าน : รับออกแบบป้าย\nหมวดหมู่หลัก :\nสถานะร้าน : เปิดรับคิวอยู่นะคะ\n\nขั้นตอนสั่งซื้อ\n1. ทักแชท\n2. เลือกแบบฟอร์ม\n3. กรอกข้อมูล\n4. รอรับงาน\nวิธีชำระเงิน :\n\nหมวดร้านขายป้าย\nตัวอย่างตูน :\nตัวอย่างบล็อก :\nตัวอย่างฟอนต์ :\nรายละเอียดราคา :\n\nหมวดขายกลุ่ม\nชื่อกลุ่ม :\nราคา :\nลิงก์เข้ากลุ่ม :`;
+  }
+  
+  navigator.clipboard.writeText(text).then(() => {
+    var x = document.getElementById("toast");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2500);
+  });
+}
+</script>
 </body>
 </html>
-END OF FILE
