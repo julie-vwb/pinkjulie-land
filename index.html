@@ -13,7 +13,6 @@
     --blue4: #1E88E5;
     --navy: #0D47A1;
     --pink-accent: #F06292;
-    --yellow-accent: #FFF176;
     --bg-grad: linear-gradient(160deg, #E3F2FD 0%, #FFFFFF 50%, #BBDEFB 100%);
     --white: rgba(255, 255, 255, 0.9);
     --text: #0D47A1;
@@ -30,19 +29,23 @@
     overflow-x: hidden;
   }
 
-  /* อิโมจิลอยตรงพื้นหลัง */
-  .sp { position:fixed; pointer-events:none; z-index:0; animation:fl 5s ease-in-out infinite; opacity:0.5; color: var(--blue3); }
+  /* เพิ่มอิโมจิที่พื้นหลังให้เยอะขึ้น */
+  .sp { position:fixed; pointer-events:none; z-index:0; animation:fl 5s ease-in-out infinite; opacity:0.4; color: var(--blue3); }
   .sp:nth-child(1){top:4%;left:5%;font-size:22px;}
   .sp:nth-child(2){top:12%;right:8%;font-size:14px;animation-delay:1s;}
   .sp:nth-child(3){top:38%;left:2%;font-size:12px;animation-delay:2s;}
   .sp:nth-child(4){top:55%;right:4%;font-size:20px;animation-delay:.5s;}
+  .sp:nth-child(5){top:25%;left:15%;font-size:18px;animation-delay:1.5s;}
+  .sp:nth-child(6){top:70%;left:8%;font-size:15px;animation-delay:2.5s;}
+  .sp:nth-child(7){top:85%;right:12%;font-size:22px;animation-delay:0.2s;}
+  .sp:nth-child(8){top:45%;right:15%;font-size:12px;animation-delay:3s;}
+  
   @keyframes fl {0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-14px) rotate(8deg);}}
 
   .wrap { max-width:480px; margin:0 auto; padding:16px 14px 60px; position:relative; z-index:1; }
 
   .header { text-align:center; padding:35px 0 20px; animation:fadeUp .7s ease both; position: relative; }
 
-  /* ปรับดีไซน์โลโก้และอิโมจิลอย */
   .logo-wrapper {
     margin-bottom: 25px;
     display: flex;
@@ -58,7 +61,7 @@
     border: 5px solid #fff; box-shadow: 0 8px 20px rgba(30, 136, 229, 0.2);
     position: relative; z-index: 2;
   }
-  /* อิโมจิลอยตรงโลโก้ */
+  
   .logo-emoji {
     position: absolute; font-size: 1.5rem; z-index: 1;
     animation: floatEmoji 3s ease-in-out infinite;
@@ -76,7 +79,6 @@
   .shop-name { font-size:2.2rem; font-weight:700; color: var(--blue4); text-shadow: 2px 2px 4px rgba(0,0,0,0.05); }
   .shop-sub { font-size:.9rem; color:var(--textl); margin-top:8px; opacity: 0.8; }
 
-  /* Pill Boxes */
   .badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:15px; }
   .badge {
     background:#fff; border:1.5px solid var(--blue2);
@@ -96,10 +98,10 @@
   }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
-  /* ปรับแบนเนอร์ให้เต็มสัดส่วนจริง ไม่บังคับ 1:1 */
+  /* แบนเนอร์ใหม่ตามชื่อไฟล์ที่ระบุ */
   .banner-img { 
     width: 100%; 
-    height: auto; /* แสดงผลตามสัดส่วนจริง */
+    height: auto; 
     border-radius: 18px; 
     margin-bottom: 15px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
@@ -119,6 +121,7 @@
     display: flex; justify-content: space-between; align-items: center;
     padding: 10px 0; border-bottom: 1px dashed var(--blue2);
   }
+  /* ปรับราคาเป็นสีฟ้าเหมือนกัน ไม่เอาสีเหลือง */
   .price-tag {
     background: var(--blue1); color: var(--blue4);
     padding: 4px 12px; border-radius: 15px; font-weight: 600; font-size: 0.85rem;
@@ -179,7 +182,6 @@
     text-decoration: none; font-size: 0.75rem; font-weight: 500;
   }
 
-  /* Notice Box Styles */
   .notice-box {
     margin-top: 25px;
     padding: 20px;
@@ -223,6 +225,7 @@
 </head>
 <body>
 <div class="sp">💎</div><div class="sp">✨</div><div class="sp">☁️</div><div class="sp">💧</div>
+<div class="sp">🎀</div><div class="sp">🌟</div><div class="sp">🎈</div><div class="sp">🌊</div>
 
 <div class="wrap">
   <div class="header">
@@ -238,13 +241,13 @@
     <div class="badges">
       <span class="badge">🌐 รับสร้างเว็บร้านค้า</span>
       <span class="badge">🎨 รับออกแบบป้าย</span>
-      <span class="badge">🎮 รับเติมเกมส์</span>
+      <span class="badge">🧸 ราคาถูก</span>
     </div>
   </div>
 
   <div class="status-bar"><div class="status-dot"></div>เปิดรับคิวอยู่นะคะ</div>
 
-  <img src="ไม่มีชื่อ 48_20260228114021.png" alt="Banner" class="banner-img">
+  <img src="ไม่มีชื่อ 49_20260301001522.png" alt="Banner" class="banner-img">
 
   <div class="card">
     <div class="ct">📦 หมวดหมู่สินค้า</div>
@@ -269,7 +272,7 @@
 
   <div class="card">
     <div class="ct">💰 รายละเอียดราคา</div>
-    <div class="price-item"><span>เริ่มต้น (โลโก้ + ข้อมูล < 200 lines)</span><span class="price-tag" style="background:var(--yellow-accent); color:var(--text);">109 ฿</span></div>
+    <div class="price-item"><span>เริ่มต้น (โลโก้ + ข้อมูล < 200 lines)</span><span class="price-tag">109 ฿</span></div>
     <div class="price-item"><span>มีโลโก้ + ข้อมูล > 400 lines</span><span class="price-tag">129 ฿</span></div>
     <div class="price-item"><span>มีโลโก้ + ข้อมูล > 600 lines</span><span class="price-tag">149 ฿</span></div>
     <div class="price-item"><span>มีโลโก้ + ข้อมูล > 800 lines</span><span class="price-tag">169 ฿</span></div>
@@ -291,7 +294,7 @@
     </div>
     <div class="copy-area">
       <button class="btn-copy" onclick="copyText(1)">🌟 แบบฟอร์มข้อมูลร้านทั่วไป/คอมมิชชั่น</button>
-      <button class="btn-copy" onclick="copyText(2)">🌟 แบบฟอร์มร้านแอป / สติกเกอร์</button>
+      <button class="btn-copy" onclick="copyText(2)">🌟 แบบฟอร์มร้านแอพพรี / สติกเกอร์ไลน์</button>
       <button class="btn-copy" onclick="copyText(3)">🌟 แบบฟอร์มร้านขายป้าย</button>
     </div>
   </div>
@@ -320,7 +323,7 @@
   </div>
 
   <div class="footer">
-    <div style="opacity: 0.6;">© 2026 pinkjulieland • ยินดีให้บริการค่ะ 💙</div>
+    <div style="opacity: 0.6;">© 2026 pinkjulieland •  ขอบคุณที่ไว้วางใจจูยินดีให้บริการค่ะ 💙</div>
   </div>
 </div>
 
